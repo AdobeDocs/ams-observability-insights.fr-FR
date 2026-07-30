@@ -334,7 +334,7 @@ P95 (1 Hour Ago)
 
 ### Score APDEX au fil du temps
 
-![ APDEX ](assets/apm/8_apdex_score_overtime.png)
+![&#x200B; APDEX &#x200B;](assets/apm/8_apdex_score_overtime.png)
 
 #### Description
 
