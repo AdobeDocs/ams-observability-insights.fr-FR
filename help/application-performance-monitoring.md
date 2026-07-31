@@ -1,23 +1,23 @@
 ---
-title: Surveillance des performances des applications (APM) avec Synoptryx
-description: Utilisez le plug-in Synoptryx APM pour suivre les transactions AEM, surveiller la JVM, analyser les transactions et inspecter les traces de transaction et les services externes sur AEM Managed Services.
+title: Surveillance des performances des applications (APM) avec  [!DNL Synoptryx]
+description: Utilisez le plug [!DNL Synoptryx] in APM pour suivre les transactions AEM, surveiller la JVM, analyser les transactions et inspecter les traces de transaction et les services externes sur AEM Managed Services.
 feature: Operations
 role: Admin
-source-git-commit: 883b68e3bc57ba6b55559560a967a6dbc553262a
+source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
 workflow-type: tm+mt
-source-wordcount: '1089'
+source-wordcount: '1078'
 ht-degree: 5%
 
 ---
 
 
-# Surveillance des performances des applications (APM) avec Synoptryx {#application-performance-monitoring}
+# Surveillance des performances des applications (APM) avec [!DNL Synoptryx] {#application-performance-monitoring}
 
-La surveillance des performances des applications Synoptryx (APM) fournit des performances et une expérience utilisateur en temps réel et historique d’insight dans Adobe Experience Manager (AEM). Le suivi des transactions de bout en bout, les graphiques et les rapports offrent une visibilité sur le comportement de l’application jusqu’au niveau du code Java.
+La surveillance des performances des applications [!DNL Synoptryx] (APM) fournit des données historiques et en temps réel d’insight sur les performances d’Adobe [!DNL Experience Manager] (AEM) et l’expérience de l’utilisateur final. Le suivi des transactions de bout en bout, les graphiques et les rapports offrent une visibilité sur le comportement de l’application jusqu’au niveau du code Java.
 
-## Module externe Managed Services Synoptryx APM {#apm-plugin}
+## Module externe Managed Services [!DNL Synoptryx] APM {#apm-plugin}
 
-AEM s’exécute en tant qu’application Java sur Jetty avec les modules OSGi Apache Felix, basés sur Apache Sling et Jackrabbit Oak. Adobe Managed Services, l’ingénierie AEM et l’ingénierie Synoptryx ont développé conjointement une instrumentation personnalisée pour les environnements Managed Services.
+AEM s’exécute en tant qu’application Java sur Jetty avec les modules OSGi Apache Felix, basés sur Apache Sling et Jackrabbit Oak. Adobe Managed Services, l’ingénierie AEM et l’ingénierie [!DNL Synoptryx] ont développé conjointement une instrumentation personnalisée pour les environnements Managed Services.
 
 Cette instrumentation collecte :
 
@@ -29,7 +29,7 @@ Cette instrumentation collecte :
 
 ![Vue de trace APM Synoptryx montrant les plages de composants AEM imbriqués et la chronologie d’exécution d’une requête de page](assets/image19.png)
 
-## Utilisation de Synoptryx APM {#using-apm}
+## Utilisation d’[!DNL Synoptryx] APM {#using-apm}
 
 Utilisez APM pour identifier les problèmes d’application avant qu’ils n’affectent les utilisateurs finaux. L’auteur et la publication partagent une base de code, mais sont surveillés en tant qu **applications APM distinctes** afin que vous puissiez analyser chaque niveau indépendamment.
 
@@ -38,7 +38,7 @@ Chaque environnement Managed Services comprend :
 - Une application APM pour l’auteur
 - Une application APM pour la publication
 
-Sélectionnez un nom d’application dans Synoptryx APM pour ouvrir son tableau de bord de présentation et de surveillance.
+Sélectionnez un nom d’application dans [!DNL Synoptryx]’APM pour ouvrir son tableau de bord de présentation et de surveillance.
 
 ![Liste synoptique des applications APM montrant les applications de création et de publication](assets/image1a.png)
 
@@ -70,7 +70,7 @@ Le tableau de bord est organisé en sections extensibles qui regroupent les mesu
 
 ### Description
 
-La section **Présentation** présente des indicateurs clés de performance (KPI) de haut niveau qui résument l’état actuel de l’application surveillée.
+La section **[!UICONTROL Présentation]** présente des indicateurs clés de performance (KPI) de haut niveau qui résument l’état actuel de l’application surveillée.
 
 Ces KPI fournissent un résumé d’un coup d’œil de l’activité de l’application, du débit, du succès de la requête et de l’expérience utilisateur globale.
 
