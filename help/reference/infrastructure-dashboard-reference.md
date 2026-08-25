@@ -152,7 +152,7 @@ en fonction du volume de trafic observé.
 
 ## &#x200B;4. Attente d’E/S CPU
 
-![Attente D’E/S ](../assets/host-monitoring/cpu_io_wait.png)
+![Attente D’E/S &#x200B;](../assets/host-monitoring/cpu_io_wait.png)
 
 ### Description
 
@@ -215,7 +215,7 @@ Le graphique fournit une vue historique de l’utilisation de la capacité du sy
 
 ## &#x200B;6. Utilisation du disque
 
-![ Utilisation du disque ](../assets/host-monitoring/storage_disk_usage.png)
+![&#x200B; Utilisation du disque &#x200B;](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Description
 
