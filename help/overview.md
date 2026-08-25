@@ -3,9 +3,9 @@ title: Surveiller votre environnement AEM Managed Services à l’aide d’Obser
 description: Commencez ici pour découvrir ce que couvre Observability Insights dans AEM Managed Services, à qui il s’adresse et comment naviguer dans le reste de ce guide.
 feature: Operations
 role: Admin
-source-git-commit: 94ba857f5b6a5c33483e4d49f5a1daa9583b6347
+source-git-commit: 440f182902d797a91b584fe1bac7f2b417f30ebe
 workflow-type: tm+mt
-source-wordcount: '737'
+source-wordcount: '733'
 ht-degree: 0%
 
 ---
@@ -13,9 +13,9 @@ ht-degree: 0%
 
 # Surveiller votre environnement AEM Managed Services à l’aide d’Observability Insights {#observability-insights-monitoring}
 
-Observability Insights offre une visibilité sur les performances des applications, l’intégrité de l’infrastructure et le comportement des services dans Adobe Experience Manager Managed Services, sans nécessiter de plateforme de surveillance distincte.
+**Observability Insights** offre une visibilité sur les performances des applications, l’intégrité de l’infrastructure et le comportement des services dans AEM Managed Services, sans nécessiter de plateforme de surveillance distincte.
 
-Si vous êtes responsable de la fiabilité du service, de la réponse aux incidents ou de l’analyse des performances, Observability Insights vous aide à passer rapidement des symptômes aux preuves. Il associe la télémétrie des applications et des signaux d’intégrité au niveau de l’hôte afin que les équipes clientes et les Managed Services d’Adobe puissent enquêter sur les problèmes d’une vue opérationnelle partagée.
+Si vous êtes responsable de la fiabilité du service, de la réponse aux incidents ou de l’analyse des performances, **Observability Insights** vous aide à passer rapidement des symptômes aux preuves. Elle associe la télémétrie des applications et les signaux d’intégrité au niveau de l’hôte afin que les équipes clientes et les équipes Adobe puissent étudier les problèmes d’un point de vue opérationnel partagé.
 
 ## Pourquoi les équipes utilisent-elles Observability Insights ? {#why-teams-use-observability-insights}
 
