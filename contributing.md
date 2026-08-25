@@ -17,7 +17,7 @@ Ce projet a adopté le [code de conduite d’Adobe Open Source](code-of-conduct.
 
 ## Documentation du guide du contributeur
 
-Voir le [Guide du contributeur](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
+Voir le [Guide du contributeur](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=fr).
 
 ## Comment contribuer
 
@@ -58,4 +58,4 @@ L’équipe de documentation d’ est heureuse de toute contribution et examiner
 
 ## Informations supplémentaires
 
-Consultez le [Guide du contributeur aux documents &#x200B;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) pour plus d’informations sur l’utilisation de la plateforme de création GitHub.
+Consultez le [Guide du contributeur aux documents &#x200B;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=fr) pour plus d’informations sur l’utilisation de la plateforme de création GitHub.
