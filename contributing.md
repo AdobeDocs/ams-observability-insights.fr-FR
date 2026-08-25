@@ -1,23 +1,23 @@
 ---
-source-git-commit: 43317991c712a8ee9fe721f2635f5ebd5dd0274e
+source-git-commit: e94c1ec35b136696b886ad386a99171879f8a36e
 workflow-type: tm+mt
-source-wordcount: '495'
+source-wordcount: '487'
 ht-degree: 1%
 
 ---
-# Contribution à la documentation de Adobe Experience Manager Cloud Service
+# Contribution à la documentation
 
-Merci d’avoir choisi de contribuer à la documentation de Adobe Experience Manager Cloud Service. L’équipe de documentation se réjouit des contributions de contenu de l’ensemble de la communauté des lecteurs et des autres employés d’Adobe.
+Merci d’avoir choisi de contribuer à notre documentation ! L’équipe de documentation se réjouit des contributions de contenu de l’ensemble de la communauté des lecteurs et des autres employés d’Adobe.
 
 Ce fichier décrit comment apporter votre contribution et indique les directives à suivre pour le faire.
 
 ## Code de conduite d’Adobe Open Source
 
-Ce projet a adopté le [code de conduite d’Adobe Open Source](code-of-conduct.md). En contribuant à la documentation d’AEM, vous acceptez de respecter ce code de conduite. Signalez tout comportement inacceptable à [&#128279;](mailto:Grp-opensourceoffice@adobe.com).
+Ce projet a adopté le [code de conduite d’Adobe Open Source](code-of-conduct.md). En contribuant à la documentation d’AEM, vous acceptez de respecter ce code de conduite. Signalez tout comportement inacceptable à [](mailto:Grp-opensourceoffice@adobe.com).
 
 ## Documentation du guide du contributeur
 
-Voir le [Guide du contributeur](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=fr).
+Voir le [Guide du contributeur](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html).
 
 ## Comment contribuer
 
@@ -58,4 +58,4 @@ L’équipe de documentation d’ est heureuse de toute contribution et examiner
 
 ## Informations supplémentaires
 
-Consultez le [Guide du contributeur aux documents &#x200B;](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html?lang=fr) pour plus d’informations sur l’utilisation de la plateforme de création GitHub.
+Consultez le [Guide du contributeur aux documents ](https://experienceleague.adobe.com/docs/contributor/contributor-guide/introduction.html) pour plus d’informations sur l’utilisation de la plateforme de création GitHub.
