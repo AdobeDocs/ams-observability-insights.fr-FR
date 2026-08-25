@@ -1,68 +1,91 @@
 ---
-title: Surveillez votre environnement AEM Managed Services avec  [!DNL Synoptryx]
-description: 'Présentation  [!DNL Synoptryx]  la surveillance sur Adobe [!DNL Experience Manager] Managed Services : ce qu’Adobe surveille, comment votre compte est configuré et comment votre équipe obtient l’accès.'
+title: Surveiller votre environnement AEM Managed Services à l’aide d’Observability Insights
+description: Commencez ici pour découvrir ce que couvre Observability Insights dans AEM Managed Services, à qui il s’adresse et comment naviguer dans le reste de ce guide.
 feature: Operations
 role: Admin
-source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
+source-git-commit: 440f182902d797a91b584fe1bac7f2b417f30ebe
 workflow-type: tm+mt
-source-wordcount: '618'
+source-wordcount: '733'
 ht-degree: 0%
 
 ---
 
 
-# Surveillez votre environnement AEM Managed Services avec [!DNL Synoptryx] {#synoptryx-monitoring}
+# Surveiller votre environnement AEM Managed Services à l’aide d’Observability Insights {#observability-insights-monitoring}
 
-[!DNL Synoptryx] offre à votre équipe une visibilité sur les performances des applications, l’intégrité de l’infrastructure et l’expérience de l’utilisateur final, sans avoir à configurer de plateforme de surveillance distincte.
+**Observability Insights** offre une visibilité sur les performances des applications, l’intégrité de l’infrastructure et le comportement des services dans AEM Managed Services, sans nécessiter de plateforme de surveillance distincte.
 
->[!NOTE]
->
-> Un livre blanc de présentation du produit [!DNL Synoptryx] est disponible pour une présentation complète de l’observabilité et de la surveillance d’AEM Managed Services. Il est idéal pour le partage avec les parties prenantes ou l’examen hors ligne.
+Si vous êtes responsable de la fiabilité du service, de la réponse aux incidents ou de l’analyse des performances, **Observability Insights** vous aide à passer rapidement des symptômes aux preuves. Elle associe la télémétrie des applications et les signaux d’intégrité au niveau de l’hôte afin que les équipes clientes et les équipes Adobe puissent étudier les problèmes d’un point de vue opérationnel partagé.
 
-## Vue d’ensemble {#overview}
+## Pourquoi les équipes utilisent-elles Observability Insights ? {#why-teams-use-observability-insights}
 
-[!DNL Synoptryx] est une plateforme d’observabilité nouvelle génération d’Adobe conçue pour offrir une visibilité unifiée sur les performances des applications, l’intégrité de l’infrastructure et la surveillance synthétique. Il permet une surveillance proactive des services critiques de l’entreprise grâce à une expérience unique et intégrée. [!DNL Synoptryx] associe la surveillance des performances des applications (APM), la surveillance de l’infrastructure et la surveillance du Parcours d’utilisateurs synthétiques pour aider à identifier et à résoudre les problèmes avant qu’ils n’affectent les utilisateurs finaux. La plateforme fournit un suivi détaillé des transactions, des informations JVM, une télémétrie de l’infrastructure et des diagnostics avancés pour une analyse plus rapide des causes premières. Basé sur des technologies d’observabilité modernes, il offre une surveillance évolutive et sécurisée sur des environnements d’entreprise complexes. [!DNL Synoptryx] offre une rétention des données étendue, des tableaux de bord riches et des analyses intelligentes pour soutenir l&#39;excellence opérationnelle. Une expérience de connexion transparente avec [!DNL Adobe IMS] garantit un accès et une gouvernance sécurisés. La plateforme est conçue pour améliorer la fiabilité du service, accélérer le dépannage et améliorer l’expérience client. En tant que solution d’observabilité stratégique d’Adobe, [!DNL Synoptryx] fournit une base évolutive pour la surveillance, l’automatisation et les informations opérationnelles des environnements de services gérés.
+Utilisez les insights d’observabilité pour répondre à des questions opérationnelles telles que :
 
-[!DNL Synoptryx] est inclus dans Adobe [!DNL Experience Manager] Managed Services ; aucune plateforme de surveillance distincte ni licence n’est requise. Adobe surveille la disponibilité et les performances de votre environnement dans le cadre de notre offre standard. Il s’[!DNL Synoptryx] de la plateforme dédiée que votre équipe peut utiliser pour évaluer les performances de votre application Adobe [!DNL Experience Manager] (AEM) et de votre infrastructure de support.
+- Le problème affecte-t-il l’auteur, la publication ou les deux ?
+- Le problème est-il dû au comportement de l’application, à la pression des ressources de l’hôte ou à une combinaison des deux ?
+- Quels sont les transactions, les points d’entrée ou les groupes de statuts qui expliquent le pic d’erreurs ou de latence ?
+- Le problème est-il isolé dans un environnement ou visible dans l’ensemble de la topologie ?
 
-Ce guide explique les éléments surveillés, la configuration de votre compte [!DNL Synoptryx] et la navigation dans les tableaux de bord que vous utilisez pour les analyses et la résolution des problèmes quotidiens.
+Observability Insights est conçu pour l’analyse opérationnelle des comportements récents. Il vous permet d’identifier les éléments qui ont changé, les endroits où ils ont changé et les signaux les plus pertinents avant l’escalade ou l’action corrective.
+
+## Qu’est-ce qu’Observability Insights peut vous apporter ? {#what-observability-insights-helps-you-do}
+
+Utilisez les insights d’observabilité pour :
+
+- Comprendre comment les niveaux de création et de publication se comportent en trafic réel.
+- Associez la latence de l’application, les taux d’erreur et l’intégrité de la JVM aux signaux au niveau de l’hôte.
+- Confirmez si un problème est isolé à un environnement, un niveau ou un hôte.
+- Donnez à Adobe Managed Services et à vos équipes internes une vue opérationnelle partagée pendant l’enquête.
+
+Observability Insights est inclus dans AEM Managed Services. Adobe approvisionne et gère le compte, instrumente les environnements pris en charge et expose les tableaux de bord résultants à votre équipe en tant qu’outils opérationnels en lecture seule.
+
+Comme Adobe gère la configuration et l’instrumentation de la plateforme, vous pouvez vous concentrer sur l’investigation et l’interprétation plutôt que sur le déploiement de l’agent, l’administration de compte ou l’assemblage des tableaux de bord.
 
 ## En un coup d’œil {#at-a-glance}
 
 Dans le cadre d’AEM Managed Services, vous recevez :
 
-- **Compte [!DNL Synoptryx] dédié** — Fourni et supervisé par Adobe Managed Services, avec un accès en lecture seule pour votre équipe.
-- **Surveillance approfondie des transactions AEM** — L&#39;agent [!DNL Synoptryx] APM retrace les transactions significatives jusqu&#39;aux appels de méthode (y compris les numéros de ligne), aux dépendances externes et aux opérations de référentiel.
-- **Vue unifiée de l’application et de l’infrastructure** — Combinez les mesures au niveau de l’APM et de l’hôte pour optimiser les performances de manière holistique.
+- **Compte Observability Insights dédié** — Fourni et supervisé par Adobe Managed Services, avec accès en lecture seule à votre équipe.
+- **Surveillance approfondie des transactions AEM** — L’agent APM Observability Insights effectue le suivi des transactions significatives jusqu’aux appels de méthode (y compris les numéros de ligne), aux dépendances externes et aux opérations de référentiel.
+- **Vue unifiée des applications et des hôtes** — Combinez les applications et les mesures au niveau de l’hôte pour optimiser les performances de manière holistique.
 
-## Ce qu’Adobe surveille avec [!DNL Synoptryx] {#what-we-monitor}
+## À qui s’adresse cette documentation {#who-this-documentation-is-for}
 
-Adobe surveille les niveaux AEM **création** et **publication** à l’aide du plug-in Java APM [!DNL Synoptryx]. Tous les serveurs hébergés de votre topologie sont surveillés par l’agent d’infrastructure [!DNL Synoptryx]. La surveillance personnalisée de l’APM et de l’infrastructure est activée dans les environnements Managed Services de production et hors production.
+Cette documentation est principalement conçue pour les éléments suivants :
 
-![Diagramme présentant la surveillance Synoptryx APM et de l’infrastructure sur les serveurs AEM de création, de publication et hébergés](assets/image6.png)
+- Administrateurs AEM Managed Services qui ont besoin de visibilité sur les environnements surveillés
+- Les équipes opérationnelles et de support gèrent les incidents, l’analyse des tendances et la révision des services
+- Équipes d’ingénieurs client travaillant en partenariat avec Adobe Managed Services pendant les investigations
+- Parties prenantes qui doivent comprendre la portée du suivi et les responsabilités opérationnelles
+
+## Ce que surveille Adobe avec Observability Insights {#what-we-monitor}
+
+Adobe surveille les niveaux AEM **création** et **publication** à l’aide du plug-in Java APM Observability Insights. Tous les serveurs hébergés dans votre topologie sont surveillés par l’agent d’infrastructure Observability Insights. La surveillance personnalisée de l’APM et de l’infrastructure est activée dans les environnements Managed Services de production et hors production.
+
+![Diagramme présentant la surveillance de l’APM et de l’infrastructure d’Observability Insights sur les serveurs de création, de publication et hébergés d’AEM](v2-assets/login-screen.png)
 
 ### Applications dans votre compte {#applications-in-your-account}
 
-Votre compte [!DNL Synoptryx] est lié à un compte principal Adobe unique et peut recevoir des données de plusieurs applications, notamment :
+Votre compte Observability Insights est lié à un compte principal Adobe unique et peut recevoir des données de plusieurs applications, notamment :
 
 - Une application APM pour le niveau **Auteur** par environnement AEM Managed Services.
 - Une application APM pour le niveau **Publication** par environnement AEM Managed Services
 
-Chaque application possède sa propre clé de licence. Toutes les topologies de votre contrat Managed Services sont regroupées dans un seul compte [!DNL Synoptryx]. Les mesures et événements APM et Infrastructure sont conservés pendant 30 **maximum**.
+Chaque application possède sa propre clé de licence. Toutes les topologies de votre contrat Managed Services sont regroupées dans un seul compte Observability Insights. Les mesures et événements APM et Infrastructure sont conservés pendant 30 **maximum**.
 
-## Accès et votre compte {#access}
+## Accéder à votre compte {#access}
 
-Les données de surveillance sont consolidées dans un compte [!DNL Synoptryx] qu’Adobe approvisionne et gère. Votre équipe reçoit **accès complet en lecture seule** à toutes les mesures d’APM et d’infrastructure collectées par les agents. Adobe Managed Services conserve la propriété et le contrôle administratif du compte.
+Les données de surveillance sont consolidées dans un compte Observability Insights qu’Adobe approvisionne et gère. Les utilisateurs clients reçoivent **accès en lecture seule** aux données d’APM et d’infrastructure collectées par les agents. Adobe Managed Services conserve la propriété du compte et le contrôle administratif.
+
+### Prérequis {#access-prerequisites}
+
+Avant de vous connecter, vérifiez les points suivants :
+
+- Votre entreprise dispose d’un abonnement à **AEM Managed Services** actif. Observability Insights est inclus sans frais supplémentaires.
+- Votre ingénieur du succès client (CSE) a provisionné votre compte Adobe IMS et vous a accordé l’accès au compte Observability Insights pour votre organisation.
 
 >[!NOTE]
 >
-> **Obtention de l’accès :** l’accès à [!DNL Synoptryx] nécessite un approvisionnement [!DNL Adobe IMS]. Votre ingénieur du succès client (CSE) peut configurer et gérer l’accès des utilisateurs pour votre entreprise.
+> **Obtention de l’accès :** l’accès à Observability Insights nécessite l’approvisionnement d’Adobe IMS. Contactez l’ingénieur du succès client (CSE) pour configurer et gérer l’accès des utilisateurs pour votre entreprise.
 
-Une fois le compte configuré par le CSE, vous pouvez vous connecter à l’adresse [synoptryx.adobecqms.net](https://synoptryx.adobecqms.net).
-
-## Prochaines étapes {#whats-next}
-
-Continuez avec les tableaux de bord de surveillance que votre équipe utilise quotidiennement :
-
-- [Surveillance des performances des applications (APM)](application-performance-monitoring.md) — Effectuez le suivi des transactions AEM, analysez le comportement JVM et inspectez les services externes.
-- [Surveillance de l’infrastructure](infrastructure-monitoring.md) — Examinez les métriques relatives au système, au réseau, aux processus et au stockage au niveau de l’hôte.
+Une fois que le CSE a configuré le compte, connectez-vous à l’adresse [insights.adobecqms.net](https://insights.adobecqms.net). Cette URL est identique pour tous les clients AEM Managed Services ; les environnements et tableaux de bord de votre organisation sont limités à votre compte configuré.

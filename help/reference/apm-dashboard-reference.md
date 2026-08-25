@@ -1,76 +1,33 @@
 ---
-title: Surveillance des performances des applications (APM) avec  [!DNL Synoptryx]
-description: Utilisez le plug [!DNL Synoptryx] in APM pour suivre les transactions AEM, surveiller la JVM, analyser les transactions et inspecter les traces de transaction et les services externes sur AEM Managed Services.
+title: Référence du tableau de bord APM
+description: Référence panneau par panneau pour les tableaux de bord de l’APM Observability Insights, y compris des captures d’écran, des mesures et des unités.
 feature: Operations
 role: Admin
-source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
+source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
 workflow-type: tm+mt
-source-wordcount: '1078'
-ht-degree: 5%
+source-wordcount: '806'
+ht-degree: 7%
 
 ---
 
 
-# Surveillance des performances des applications (APM) avec [!DNL Synoptryx] {#application-performance-monitoring}
+# Référence du tableau de bord APM {#apm-dashboard-reference}
 
-La surveillance des performances des applications [!DNL Synoptryx] (APM) fournit des données historiques et en temps réel d’insight sur les performances d’Adobe [!DNL Experience Manager] (AEM) et l’expérience de l’utilisateur final. Le suivi des transactions de bout en bout, les graphiques et les rapports offrent une visibilité sur le comportement de l’application jusqu’au niveau du code Java.
+Cette référence documente les principaux panneaux APM Observability Insights utilisés dans AEM Managed Services.
 
-## Module externe Managed Services [!DNL Synoptryx] APM {#apm-plugin}
+## Navigation dans les tableaux de bord
 
-AEM s’exécute en tant qu’application Java sur Jetty avec les modules OSGi Apache Felix, basés sur Apache Sling et Jackrabbit Oak. Adobe Managed Services, l’ingénierie AEM et l’ingénierie [!DNL Synoptryx] ont développé conjointement une instrumentation personnalisée pour les environnements Managed Services.
-
-Cette instrumentation collecte :
-
-- **Nommage significatif des transactions** — Les extensions Sling alignent les noms des transactions sur la structure de la page et ajoutent un attribut `requestURL` sur les événements Insights afin que vous puissiez corréler les URL Sling entre les tableaux de bord.
-
-![Vue de trace Synoptryx APM montrant un nom de transaction AEM descriptif avec l’itinéraire de vérification d’intégrité Sling et la chronologie de durée](assets/image19a.png)
-
-- **JCR instrumentation** — Les opérations au niveau du référentiel (y compris XPath et JCR-SQL2) sont classées et associées aux traces de transaction dans la section de base de données d’APM.
-
-![Vue de trace APM Synoptryx montrant les plages de composants AEM imbriqués et la chronologie d’exécution d’une requête de page](assets/image19.png)
-
-## Utilisation d’[!DNL Synoptryx] APM {#using-apm}
-
-Utilisez APM pour identifier les problèmes d’application avant qu’ils n’affectent les utilisateurs finaux. L’auteur et la publication partagent une base de code, mais sont surveillés en tant qu **applications APM distinctes** afin que vous puissiez analyser chaque niveau indépendamment.
-
-Chaque environnement Managed Services comprend :
-
-- Une application APM pour l’auteur
-- Une application APM pour la publication
-
-Sélectionnez un nom d’application dans [!DNL Synoptryx]’APM pour ouvrir son tableau de bord de présentation et de surveillance.
-
-![Liste synoptique des applications APM montrant les applications de création et de publication](assets/image1a.png)
-
-## Sections du tableau de bord
-
-Le tableau de bord Gestion des performances des applications contient les sections suivantes :
-
-- Vue d’ensemble
-- Mesures RED (Taux · Erreurs · Durée)
-- Trafic
-- Latence et performances
-- Détails de l’erreur
-- Principales transactions
-- Intégrité JVM
-- Mémoire JVM
-- Nettoyage de la mémoire
-
-Seules les sections présentées ci-dessous sont documentées dans ce guide.
-
-## Navigation dans le tableau de bord
-
-![Navigation dans le tableau de bord](assets/apm/1_opening_screen.png)
+![Navigation dans le tableau de bord](../assets/apm/1_opening_screen.png)
 
 Le tableau de bord est organisé en sections extensibles qui regroupent les mesures de performances des applications associées. Le développement d’une section révèle un ou plusieurs graphiques associés à cette catégorie.
 
 ## Vue d’ensemble
 
-![Vue d’ensemble](assets/apm/1.1_apm_overview.png)
+![Vue d’ensemble](../assets/apm/1.1_apm_overview.png)
 
 ### Description
 
-La section **[!UICONTROL Présentation]** présente des indicateurs clés de performance (KPI) de haut niveau qui résument l’état actuel de l’application surveillée.
+La section **Présentation** présente des indicateurs clés de performance (KPI) de haut niveau qui résument l’état actuel de l’application surveillée.
 
 Ces KPI fournissent un résumé d’un coup d’œil de l’activité de l’application, du débit, du succès de la requête et de l’expérience utilisateur globale.
 
@@ -144,7 +101,7 @@ La méthodologie RED mesure trois caractéristiques principales d&#39;une applic
 
 ### Taux de demande
 
-![Taux de demande](assets/apm/2_red_metrics_request_rate.png)
+![Taux de demande](../assets/apm/2_red_metrics_request_rate.png)
 
 #### Description
 
@@ -171,7 +128,7 @@ req_min
 
 ### Taux d’erreurs
 
-![Taux d’erreur](assets/apm/3_error_rate.png)
+![Taux d’erreur](../assets/apm/3_error_rate.png)
 
 #### Description
 
@@ -199,7 +156,7 @@ error_pct (1h ago)
 
 ### Durée de la demande
 
-![Durée de la demande](assets/apm/4_request_duration_p50_p95.png)
+![Durée de la demande](../assets/apm/4_request_duration_p50_p95.png)
 
 #### Description
 
@@ -242,7 +199,7 @@ Pour chaque centile :
 
 ### Demandes par code d’état HTTP
 
-![Demandes par code d’état](assets/apm/5_requests_by_status_code.png)
+![Demandes par code d’état](../assets/apm/5_requests_by_status_code.png)
 
 #### Description
 
@@ -277,7 +234,7 @@ en fonction de l’activité de l’application.
 
 ### Taux de requêtes par point d’entrée
 
-![Taux de requêtes par point d’entrée](assets/apm/6_request_rate_by_end_point.png)
+![Taux de requêtes par point d’entrée](../assets/apm/6_request_rate_by_end_point.png)
 
 #### Description
 
@@ -306,7 +263,7 @@ endpoint_request_rate
 
 ### Temps de réponse : P95 contre 1 heure
 
-![Temps de réponse P95](assets/apm/7_response_time_p95_1h.png)
+![Temps de réponse P95](../assets/apm/7_response_time_p95_1h.png)
 
 #### Description
 
@@ -334,7 +291,7 @@ P95 (1 Hour Ago)
 
 ### Score APDEX au fil du temps
 
-![&#x200B; APDEX &#x200B;](assets/apm/8_apdex_score_overtime.png)
+![&#x200B; APDEX &#x200B;](../assets/apm/8_apdex_score_overtime.png)
 
 #### Description
 
@@ -360,7 +317,7 @@ APDEX Score
 
 ### Débit vs latence P95
 
-![Débit et latence](assets/apm/9_throughput_vs_p95latency.png)
+![Débit et latence](../assets/apm/9_throughput_vs_p95latency.png)
 
 #### Description
 
@@ -388,11 +345,11 @@ P95 Latency
 - Latence de série temporelle
 - Comparaison des mesures doubles
 
-## Détails de l’erreur
+## Détails des erreurs
 
 ### Taux d&#39;erreurs % par groupe de statuts
 
-![Taux d’erreurs par groupe de statuts](assets/apm/10_error_rate_pct_by_status_group.png)
+![Taux d’erreurs par groupe de statuts](../assets/apm/10_error_rate_pct_by_status_group.png)
 
 #### Description
 
@@ -424,10 +381,9 @@ en fonction du trafic observé.
 - Pourcentage d’erreur moyen
 - Tendance de série temporelle
 
-
 ### Tendance du taux d’erreurs - Maintenant par rapport à il y a 1 heure
 
-![Taux D’Erreurs Sur 1 Heure](assets/apm/11_error_ratio_trend_1h.png)
+![Taux D’Erreurs Sur 1 Heure](../assets/apm/11_error_ratio_trend_1h.png)
 
 #### Description
 
@@ -452,7 +408,7 @@ Current Error Ratio
 
 ### Tendance du taux d’erreurs - Maintenant par rapport à il y a 6 heures
 
-![Taux d’erreurs : 6 heures](assets/apm/12_error_ratio_trend_6h.png)
+![Taux d’erreurs : 6 heures](../assets/apm/12_error_ratio_trend_6h.png)
 
 #### Description
 

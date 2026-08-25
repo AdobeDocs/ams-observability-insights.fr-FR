@@ -1,18 +1,23 @@
 ---
 cloud: Experience Cloud
-user-guide-title: Synoptryx d’Adobe Managed Services
-breadcrumb-title: Synthèse AMS
-user-guide-description: Documentation Adobe Managed Services Synoptryx
-source-git-commit: 3a01c8bdbdca76891091a963c85c8b04bd8439db
+user-guide-title: Adobe Managed Services Observability Insights
+breadcrumb-title: Observability Insights
+user-guide-description: Documentation Adobe Managed Services Observability Insights
+source-git-commit: 269d0b7e9895077b0ae7a573bdad5408ca15e612
 workflow-type: tm+mt
-source-wordcount: '21'
-ht-degree: 4%
+source-wordcount: '41'
+ht-degree: 9%
 
 ---
 
 
-# Synoptryx d’Adobe Managed Services {#content}
+# Adobe Managed Services Observability Insights {#content}
 
-+ {hide-from-toc}[Vue d’ensemble](/help/overview.md)
-+ {hide-from-toc}[Surveillance des performances des applications](/help/application-performance-monitoring.md)
-+ {hide-from-toc}[Surveillance des infrastructures](/help/infrastructure-monitoring.md)
+- [Vue d’ensemble](/help/overview.md)
+- [Prise en main d’Observability Insights](/help/get-started/onboarding.md)
+- [Gestion des accès et des comptes](/help/get-started/access-and-accounts.md)
+- [Couverture, environnements et conservation des données](/help/get-started/coverage-and-data.md)
+- [Utiliser les informations d’observabilité](/help/use-observability-insights.md)
+- [Applications](/help/applications.md)
+- [Hôtes](/help/hosts.md)
+- [Questions fréquentes](/help/troubleshooting/common-questions.md)

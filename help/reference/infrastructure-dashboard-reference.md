@@ -1,21 +1,21 @@
 ---
-title: Surveillance de l’infrastructure avec  [!DNL Synoptryx]
-description: Utilisez  [!DNL Synoptryx]  surveillance de l’infrastructure pour examiner les mesures relatives au système, au réseau, aux processus et au stockage au niveau de l’hôte dans l’ensemble de votre empreinte AEM Managed Services.
+title: Référence du tableau de bord de l’infrastructure
+description: Référence complète pour les tableaux de bord de l’infrastructure d’Observability Insights, y compris des captures d’écran, des mesures et des unités.
 feature: Operations
 role: Admin
-source-git-commit: 12876ba185fd6d155f02639fba9601a3616c7e90
+source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
 workflow-type: tm+mt
-source-wordcount: '1107'
+source-wordcount: '1091'
 ht-degree: 7%
 
 ---
 
 
-# Tableau de bord de surveillance de l’infrastructure hôte
+# Référence du tableau de bord de l’infrastructure {#infrastructure-dashboard-reference}
 
-Cette section décrit chaque graphique de surveillance de l’infrastructure au niveau de l’hôte affiché dans le tableau de bord de surveillance de l’infrastructure. Chaque section explique l’objectif de la mesure, les données collectées, les unités de mesure et les informations présentées dans la visualisation.
+Cette référence documente les panneaux d’infrastructure au niveau de l’hôte utilisés dans Observability Insights for AEM Managed Services.
 
-## Vue d’ensemble du tableau de bord
+## Présentation du tableau de bord
 
 Le tableau de bord de surveillance de l’infrastructure hôte offre une visibilité en temps réel sur l’utilisation et les performances de l’hôte sous-jacent. Ces mesures aident les opérateurs à surveiller les ressources de calcul, de mémoire, de stockage et de réseau, tout en identifiant les goulots d’étranglement potentiels des ressources.
 
@@ -32,11 +32,11 @@ Le tableau de bord comprend les panneaux de surveillance suivants :
 
 ## &#x200B;1. Utilisation du CPU hôte
 
-![Utilisation du CPU hôte](assets/host-monitoring/host_cpu_utilization.png)
+![Utilisation du CPU hôte](../assets/host-monitoring/host_cpu_utilization.png)
 
 ### Description
 
-Le panneau **[!UICONTROL Utilisation du CPU hôte]** affiche le pourcentage de ressources CPU actuellement utilisées par le système d’exploitation et tous les processus en cours d’exécution au fil du temps.
+Le panneau **Utilisation du CPU hôte** affiche le pourcentage de ressources CPU actuellement utilisées par le système d’exploitation et tous les processus en cours d’exécution au fil du temps.
 
 Cette mesure représente l’utilisation globale de CPU sur l’hôte et fournit une visualisation de série temporelle de l’activité du processeur.
 
@@ -71,11 +71,11 @@ Le panneau résume l’utilisation de CPU à l’aide de trois valeurs :
 
 ## &#x200B;2. E/S du disque hôte
 
-![E/S de disque hôte](assets/host-monitoring/host_disk_io.png)
+![E/S de disque hôte](../assets/host-monitoring/host_disk_io.png)
 
 ### Description
 
-Le panneau **[!UICONTROL E/S de disque hôte]** affiche le débit de stockage pour les opérations de lecture et d’écriture de disque effectuées par l’hôte.
+Le panneau **E/S de disque hôte** affiche le débit de stockage pour les opérations de lecture et d’écriture de disque effectuées par l’hôte.
 
 Le graphique présente deux séries temporelles indépendantes qui représentent les données transférées entre le système d’exploitation et les périphériques de stockage.
 
@@ -109,11 +109,11 @@ L’unité affichée est automatiquement mise à l’échelle en fonction du dé
 
 ## &#x200B;3. E/S du réseau hôte
 
-![E/S réseau hôte](assets/host-monitoring/host_network_io.png)
+![E/S réseau hôte](../assets/host-monitoring/host_network_io.png)
 
 ### Description
 
-Le panneau **[!UICONTROL E/S réseau de l’hôte]** affiche le volume du trafic réseau transmis et reçu par l’hôte au fil du temps.
+Le panneau **E/S réseau de l’hôte** affiche le volume du trafic réseau transmis et reçu par l’hôte au fil du temps.
 
 Le graphique mesure le débit auquel les données transitent par les interfaces réseau et offre une visibilité sur la consommation de bande passante du réseau.
 Cette mesure représente le débit réseau agrégé.
@@ -152,11 +152,11 @@ en fonction du volume de trafic observé.
 
 ## &#x200B;4. Attente d’E/S CPU
 
-![Attente D’E/S &#x200B;](assets/host-monitoring/cpu_io_wait.png)
+![Attente D’E/S &#x200B;](../assets/host-monitoring/cpu_io_wait.png)
 
 ### Description
 
-Le panneau **[!UICONTROL Attente d’E/S de]** affiche le pourcentage du temps passé par CPU à attendre la fin des opérations d’entrée/sortie.
+Le panneau **Attente d’E/S de** affiche le pourcentage du temps passé par CPU à attendre la fin des opérations d’entrée/sortie.
 
 Cette mesure représente le temps d’inactivité du processeur qui se produit car les processus actifs sont bloqués en attendant les périphériques de stockage ou d’autres opérations d’E/S.
 
@@ -189,11 +189,11 @@ Le graphique permet de visualiser l’évolution de l’attente d’E/S au fil d
 
 ## &#x200B;5. Utilisation du stockage
 
-![Utilisation du stockage](assets/host-monitoring/storage_disk_usage.png)
+![Utilisation du stockage](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Description
 
-Le panneau **[!UICONTROL Utilisation du stockage]** affiche le pourcentage global de la capacité de stockage actuellement utilisée sur l’hôte surveillé.
+Le panneau **Utilisation du stockage** affiche le pourcentage global de la capacité de stockage actuellement utilisée sur l’hôte surveillé.
 
 Le graphique fournit une vue historique de l’utilisation de la capacité du système de fichiers au cours de l’intervalle de temps sélectionné.
 
@@ -215,11 +215,11 @@ Le graphique fournit une vue historique de l’utilisation de la capacité du sy
 
 ## &#x200B;6. Utilisation du disque
 
-![&#x200B; Utilisation du disque &#x200B;](assets/host-monitoring/storage_disk_usage.png)
+![&#x200B; Utilisation du disque &#x200B;](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Description
 
-Le panneau **[!UICONTROL Utilisation du disque]** affiche l’utilisation du stockage pour chaque système de fichiers ou périphérique de stockage monté.
+Le panneau **Utilisation du disque** affiche l’utilisation du stockage pour chaque système de fichiers ou périphérique de stockage monté.
 
 Chaque ligne correspond à un périphérique de bloc spécifique ou à une partition montée et indique le pourcentage d&#39;espace actuellement utilisé.
 
@@ -248,11 +248,11 @@ Chaque entrée comprend :
 
 ## &#x200B;7. Charge moyenne du CPU hôte
 
-![Charge moyenne du CPU hôte](assets/host-monitoring/host_cpu_load_average.png)
+![Charge moyenne du CPU hôte](../assets/host-monitoring/host_cpu_load_average.png)
 
 ### Description
 
-Le panneau **[!UICONTROL Moyenne de charge du CPU hôte]** affiche les moyennes de charge du système Linux sur trois périodes flottantes.
+Le panneau **Moyenne de charge du CPU hôte** affiche les moyennes de charge du système Linux sur trois périodes flottantes.
 
 Contrairement à l’utilisation de CPU, la moyenne de charge représente le nombre moyen de processus en cours d’exécution ou en attente de planification CPU ou d’achèvement des E/S.
 
@@ -289,11 +289,11 @@ Pour chaque mesure de charge moyenne :
 
 ## &#x200B;8. Utilisation de la mémoire hôte
 
-![Utilisation de la mémoire hôte](assets/host-monitoring/host_memory_usage.png)
+![Utilisation de la mémoire hôte](../assets/host-monitoring/host_memory_usage.png)
 
 ### Description
 
-Le panneau **[!UICONTROL Utilisation de la mémoire hôte]** affiche le pourcentage de mémoire système physique actuellement allouée par le système d’exploitation.
+Le panneau **Utilisation de la mémoire hôte** affiche le pourcentage de mémoire système physique actuellement allouée par le système d’exploitation.
 
 Cette mesure représente l’utilisation globale de la RAM pour tous les processus en cours d’exécution, la mémoire du noyau, les tampons et les caches.
 
