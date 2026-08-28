@@ -3,9 +3,9 @@ title: Surveiller votre environnement AEM Managed Services à l’aide d’Obser
 description: Commencez ici pour découvrir ce que couvre Observability Insights dans AEM Managed Services, à qui il s’adresse et comment naviguer dans le reste de ce guide.
 feature: Operations
 role: Admin
-source-git-commit: 440f182902d797a91b584fe1bac7f2b417f30ebe
+source-git-commit: fc38d43e53a366fb16151f3bd105b561f55fcbfa
 workflow-type: tm+mt
-source-wordcount: '733'
+source-wordcount: '741'
 ht-degree: 0%
 
 ---
@@ -16,6 +16,10 @@ ht-degree: 0%
 **Observability Insights** offre une visibilité sur les performances des applications, l’intégrité de l’infrastructure et le comportement des services dans AEM Managed Services, sans nécessiter de plateforme de surveillance distincte.
 
 Si vous êtes responsable de la fiabilité du service, de la réponse aux incidents ou de l’analyse des performances, **Observability Insights** vous aide à passer rapidement des symptômes aux preuves. Elle associe la télémétrie des applications et les signaux d’intégrité au niveau de l’hôte afin que les équipes clientes et les équipes Adobe puissent étudier les problèmes d’un point de vue opérationnel partagé.
+
+## Livre blanc Observability Insights
+
+[Télécharger le livre blanc Observability Insights](v2-assets/Observability_Insights_Overview.pdf)
 
 ## Pourquoi les équipes utilisent-elles Observability Insights ? {#why-teams-use-observability-insights}
 
@@ -77,7 +81,7 @@ Chaque application possède sa propre clé de licence. Toutes les topologies de 
 
 Les données de surveillance sont consolidées dans un compte Observability Insights qu’Adobe approvisionne et gère. Les utilisateurs clients reçoivent **accès en lecture seule** aux données d’APM et d’infrastructure collectées par les agents. Adobe Managed Services conserve la propriété du compte et le contrôle administratif.
 
-### Prérequis {#access-prerequisites}
+### Conditions préalables {#access-prerequisites}
 
 Avant de vous connecter, vérifiez les points suivants :
 
