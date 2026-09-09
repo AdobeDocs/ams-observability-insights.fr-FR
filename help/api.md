@@ -15,7 +15,7 @@ L’API publique Observability Insights vous permet d’extraire vos propres don
 
 > Remplacez `{{API_BASE_URL}}` dans ce document par l’hôte API de votre instance d’Observability Insights, par exemple `https://insights.adobecqms.net/`.
 
----
+&#x200B;---
 
 ## &#x200B;1. Obtention d’une clé API
 
@@ -48,7 +48,7 @@ La section Clés API répertorie toutes les clés que vous avez créées, y comp
 - Faites pivoter les clés périodiquement et révoquez toute clé qui n&#39;est plus utilisée.
 - Si une clé est compromise, révoquez-la immédiatement à partir de **Paramètres de l’organisation → Clés API** et générez un remplacement.
 
----
+&#x200B;---
 
 ## &#x200B;2. Authentification des requêtes
 
@@ -60,7 +60,7 @@ Authorization: Bearer synx_9pQ2v6f1WYbLZk3n0aRtEo4jXcHsVmDgUiPq7B8l1yc
 
 Les requêtes sans clé valide ou avec une clé expirée/révoquée reçoivent des `401 Unauthorized`. Les connexions de session (cookies/jetons de navigateur) ne sont **pas** acceptées sur cette API .
 
----
+&#x200B;---
 
 ## &#x200B;3. Concepts de base
 
@@ -111,7 +111,7 @@ Les erreurs sont renvoyées au format JSON avec un champ `error` et, en règle g
 | `502 Bad Gateway` | Échec de la requête en amont. Réessayez en toute sécurité. |
 | `503 Service Unavailable` | Serveur principal de données temporairement indisponible |
 
----
+&#x200B;---
 
 ## &#x200B;4. Points d’entrée
 
@@ -347,7 +347,7 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 }
 ```
 
----
+&#x200B;---
 
 ## &#x200B;5. Ce que cette API ne fait pas
 
@@ -355,7 +355,7 @@ curl -s "{{API_BASE_URL}}/public/v1/pages?tenant_id=<tenant_id>&limit=50" \
 - **Aucune requête entre clients.** Chaque requête est limitée à une seule `tenant_id`.
 - **Pas d’accès en écriture.** L’API publique est en lecture seule.
 
----
+&#x200B;---
 
 ## &#x200B;6. Assistance
 
