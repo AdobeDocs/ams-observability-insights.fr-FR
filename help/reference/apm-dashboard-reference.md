@@ -3,13 +3,20 @@ title: Référence du tableau de bord APM
 description: Référence panneau par panneau pour les tableaux de bord de l’APM Observability Insights, y compris des captures d’écran, des mesures et des unités.
 feature: Operations
 role: Admin
-source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '806'
 ht-degree: 7%
-
 ---
-
 
 # Référence du tableau de bord APM {#apm-dashboard-reference}
 
@@ -291,7 +298,7 @@ P95 (1 Hour Ago)
 
 ### Score APDEX au fil du temps
 
-![&#x200B; APDEX &#x200B;](../assets/apm/8_apdex_score_overtime.png)
+![ APDEX ](../assets/apm/8_apdex_score_overtime.png)
 
 #### Description
 

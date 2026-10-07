@@ -3,13 +3,20 @@ title: Référence du tableau de bord de l’infrastructure
 description: Référence complète pour les tableaux de bord de l’infrastructure d’Observability Insights, y compris des captures d’écran, des mesures et des unités.
 feature: Operations
 role: Admin
-source-git-commit: 1d54a6a398360b040221db5b2780d301722894bf
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
+feature_v2:
+  - id: 8a70d214-ab7b-58c1-b001-2ed2e5d6303d
+    internal-label: Operations
+role_v2:
+  - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
+    internal-label: Admin
+source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
 workflow-type: tm+mt
 source-wordcount: '1091'
 ht-degree: 7%
-
 ---
-
 
 # Référence du tableau de bord de l’infrastructure {#infrastructure-dashboard-reference}
 
@@ -152,7 +159,7 @@ en fonction du volume de trafic observé.
 
 ## &#x200B;4. Attente d’E/S CPU
 
-![Attente D’E/S &#x200B;](../assets/host-monitoring/cpu_io_wait.png)
+![Attente D’E/S ](../assets/host-monitoring/cpu_io_wait.png)
 
 ### Description
 
@@ -215,7 +222,7 @@ Le graphique fournit une vue historique de l’utilisation de la capacité du sy
 
 ## &#x200B;6. Utilisation du disque
 
-![&#x200B; Utilisation du disque &#x200B;](../assets/host-monitoring/storage_disk_usage.png)
+![ Utilisation du disque ](../assets/host-monitoring/storage_disk_usage.png)
 
 ### Description
 
