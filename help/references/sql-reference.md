@@ -1,9 +1,12 @@
 ---
-source-git-commit: 4949fcad799260aa73354a8c0b9d79e6394cb257
+title: Référence SQL
+description: Référencez la syntaxe SQL, les clauses et les fonctions prises en charge par Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '1479'
-ht-degree: 10%
+source-wordcount: '1492'
+ht-degree: 9%
 ---
+
 ## Référence SQL {#sql-reference}
 
 Cette référence couvre la syntaxe SQL, les clauses, les fonctions et les opérateurs. Développez chaque entrée pour obtenir des détails et des exemples.
@@ -28,7 +31,8 @@ FROM   <Entity>
 <unit>        := second | seconds | minute | minutes | hour | hours | day | days | week | weeks
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Les annotations `--` ci-dessus sont uniquement de la documentation. SQL lui-même n&#39;accepte pas les commentaires.
 
 ### Clauses obligatoires
@@ -154,7 +158,8 @@ SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, pe
 SELECT count(*) FROM Transaction FACET urlPath LIMIT 50
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Définissez toujours un `LIMIT` sur les variables pilotées par les requêtes et sur les facettes de cardinalité élevée (`urlPath`, `traceId`, `jcr.path`, `url`).
 
 </details>
@@ -194,8 +199,9 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - La fenêtre ne peut pas dépasser **31 jours** (_la période ne peut pas dépasser 31 jours_).
 - Les dates absolues (`SINCE '2026-01-01'`) et `TODAY` / `YESTERDAY` ne sont pas prises en charge.
 
-&#x200B;> [!IMPORTANT]
-> Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure) remplace** `SINCE` et `UNTIL`. Voir [&#x200B; Priorité de la fenêtre temporelle &#x200B;](#time-window-precedence).
+>[!IMPORTANT]
+>
+> Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure) remplace** `SINCE` et `UNTIL`. Voir [ Priorité de la fenêtre temporelle ](#time-window-precedence).
 
 </details>
 
@@ -224,7 +230,8 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction TIMESERIES AUTO
 SELECT count(*) FROM Transaction TIMESERIES 1 hour SINCE 1 day ago
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Privilégiez les `AUTO` sur les tableaux de bord. Il conserve environ 120 points, quelle que soit l’heure indiquée par le sélecteur. Il évite également les lignes « brisées » par hôte, car les mesures de l’hôte sont grattées environ toutes les 90 secondes.
 
 </details>
@@ -316,7 +323,7 @@ SELECT average(duration) AS avgMs FROM Transaction FACET service TIMESERIES AUTO
 <summary><code>count(*)</code> / <code>count(attribute)</code></summary>
 
 - `count(*)` compte les lignes.
-- `count(attribute)` compte les lignes dont l&#39;attribut n&#39;est **pas NULL**. Pour les attributs de chaîne, les valeurs manquantes sont vides (`''`) plutôt que NULL. Elles sont donc toujours comptabilisées (voir [&#x200B; Gestion des types &#x200B;](#46-type-handling-blank-vs-null)).
+- `count(attribute)` compte les lignes dont l&#39;attribut n&#39;est **pas NULL**. Pour les attributs de chaîne, les valeurs manquantes sont vides (`''`) plutôt que NULL. Elles sont donc toujours comptabilisées (voir [ Gestion des types ](#46-type-handling-blank-vs-null)).
 
 ```sql
 SELECT count(*) AS requests, count(http.statusCode) AS withStatusCode FROM Transaction
@@ -434,7 +441,8 @@ SELECT rate(value) AS bytesPerSec FROM NetworkReceiveRate FACET host TIMESERIES 
 - Fonctionne uniquement sur les entités de compteur (marquées ✔ dans le [dictionnaire de données](#53-curated-metric-entities)).
 - Nécessite `TIMESERIES` et doit être le **seul** agrégat. `FILTER` n&#39;est pas autorisé.
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > Toujours `FACET host` ou filtrer sur un seul hôte. Un `rate()` sans facettes sur de nombreux hôtes compare les compteurs des différents hôtes et produit des nombres dénués de sens. Les compteurs de disque sont par périphérique, donc `FACET host, device` est le plus précis.
 
 </details>
@@ -508,14 +516,16 @@ Contraintes de fonction en un coup d’œil :
 SELECT count(*) FROM Transaction WHERE (status = 'Error' OR duration > 2000) AND NOT host LIKE '%dispatcher%' AND http.method IN ('GET', 'POST')
 ```
 
-&#x200B;> [!WARNING]
+>[!WARNING]
+>
 > `attr = NULL` est une erreur. Utilisation `attr IS NULL`.
 
 ### Gestion des types : vide ou NULL
 
 Chaque attribut possède un type dans le catalogue : `string`, `number`, `boolean` ou `timestamp`. SQL vérifie les fonctions associées (par exemple, `average(service)` est rejeté). Aucune fonction de conversion de type n’est nécessaire ou disponible.
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **Vide ou NUL.** La plupart des attributs de chaîne proviennent de mappages d’attributs OpenTelemetry, où une clé _manquante_ se lit comme une `''` de chaîne vide, et non comme une `NULL`. Pour ne conserver que les plages comportant un attribut, utilisez **`attr != ''`** plutôt que `IS NOT NULL`. Les attributs numériques tels que `http.statusCode` sont véritablement `NULL` en cas d’absence, donc `IS NOT NULL` fonctionne pour eux.
 
 ```sql
@@ -559,8 +569,8 @@ Si vous connaissez la requête existante, voici le détail de la migration
 | `derivative(x, 1 minute)` | `derivative(x)` + `TIMESERIES` | Par seconde |
 | `uniques(x)` | `count(*) … FACET x LIMIT n` |                                                              |
 | `keyset()` / `SHOW EVENT TYPES` | [Requêtes de découverte](#101-data-discovery) ou le panneau du guide de requête |                                                              |
-| `histogram(duration, …)` | `FILTER` compartiments | Voir [&#x200B; Tutoriel 3](#84-build-a-latency-histogram) |
-| `FACET CASES (…)` | `FILTER` colonnes | Voir [&#x200B; Tutoriel 3](#83-group-values-into-cases-with-filter) |
+| `histogram(duration, …)` | `FILTER` compartiments | Voir [ Tutoriel 3](#84-build-a-latency-histogram) |
+| `FACET CASES (…)` | `FILTER` colonnes | Voir [ Tutoriel 3](#83-group-values-into-cases-with-filter) |
 | `COMPARE WITH 1 week ago` | Non pris en charge. | Modifiez le sélecteur d’heure ou utilisez `SINCE … UNTIL …` via l’API |
 | `RLIKE` | `LIKE` / `IN` |                                                              |
 | Mathématiques dans l’agrégation `SELECT`/imbriquée | **Formule** widget |                                                              |

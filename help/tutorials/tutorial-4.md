@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 'Tutoriel 4 : Fonctions avancées'
+description: Découvrez comment utiliser des fonctions SQL avancées pour analyser la télémétrie Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '491'
+source-wordcount: '507'
 ht-degree: 1%
 ---
+
 ## Tutoriel 4 : Fonctions avancées {#tutorial-4-advanced-functions}
 
 Ce tutoriel couvre les fonctions et les entités qui alimentent des investigations plus approfondies : la variabilité, la croissance, les recherches du « pire exemple », la part du total, la composition des transactions et les mesures arbitraires OpenTelemetry.
@@ -64,7 +67,8 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > `avgDurationMs` n’est pas automatiquement balisé avec une unité. Définissez le widget **Unit** sur `ms`.
 
 ### Découvrir et interroger n’importe quelle mesure
@@ -91,7 +95,8 @@ Pour voir quels **attributs d’étendue** sont renseignés pour chaque service,
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Lorsqu’une entité sélectionnée existe (par exemple, `CpuUtilization`), préférez-la à `MetricGauge`. Il applique le filtre approprié et la conversion de l’unité, et peut être accéléré par cumul.
 
 ### Choisir l’entité de suivi appropriée

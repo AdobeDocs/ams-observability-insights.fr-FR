@@ -1,17 +1,20 @@
 ---
-source-git-commit: 05ed98c07602488843c52cd262af2d8cc204fef1
+title: Création d’un tableau de bord
+description: Découvrez comment créer, configurer, enregistrer et partager des tableaux de bord Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '1117'
+source-wordcount: '1129'
 ht-degree: 2%
 ---
-### Créer un tableau de bord, étape par étape
 
-#### Étape 1 : Avant de commencer
+## Créer un tableau de bord, étape par étape
+
+### Étape 1 : Avant de commencer
 
 - **Sélectionnez un seul client** dans le sélecteur de client. **Créer un tableau de bord** est désactivé lorsque **Tous les comptes** est sélectionné. SQL ne peut pas s&#39;exécuter sur le client de démonstration.
 - **Roles.** Toute personne disposant d’un accès aux tableaux de bord peut ajouter, modifier et enregistrer des widgets. La création ou la modification de **variables** et l’inspection de la requête d’un widget se limitent aux **administrateurs d’organisation** et **super administrateurs**.
 
-#### Étape 2 : créer le tableau de bord
+### Étape 2 : créer le tableau de bord
 
 1. Ouvrez **Tableaux de bord** dans le volet de navigation de gauche.
 2. Cliquez sur **Créer un tableau de bord**.
@@ -26,7 +29,7 @@ ht-degree: 2%
 
 4. Saisissez un **nom** et confirmez. La zone de travail du tableau de bord s’ouvre.
 
-#### Étape 3 : Découvrir la zone de travail
+### Étape 3 : Découvrir la zone de travail
 
 | Domaine | Contrôles |
 | ---------------------------- | --------------------------------------------------------------------------------------------------------- |
@@ -36,10 +39,11 @@ ht-degree: 2%
 | **Grille** | 12 colonnes. Faites glisser les widgets près de la poignée, redimensionnez-les depuis le coin (minimum 2×2). |
 | **En-tête du widget** (au survol) | Télécharger CSV, Télécharger PNG, Modifier, Dupliquer, Supprimer, faire glisser la poignée |
 
-&#x200B;> [!IMPORTANT]
+>[!IMPORTANT]
+>
 > **L’enregistrement est explicite.** Les modifications de disposition, les nouveaux widgets, onglets et variables restent dans votre navigateur jusqu’à ce que vous cliquiez sur **Enregistrer**. Le bouton indique _Enregistrement... → enregistré_ ou _Échec de l’enregistrement_ (voir [Dépannage](#troubleshooting)).
 
-#### Étape 4 : ajouter un widget
+### Étape 4 : ajouter un widget
 
 Cliquez sur **Ajouter un widget**. La boîte de dialogue comporte trois modes : **Requête unique**, **Formule** et **Texte**. Il dispose également de son propre sélecteur d’heure. Vous pouvez donc prévisualiser le widget sur n’importe quelle fenêtre.
 
@@ -60,10 +64,11 @@ Cliquez sur **Ajouter un widget**. La boîte de dialogue comporte trois modes : 
 3. Utilisez le panneau **Guide de requête** pour parcourir les entités, les attributs et les exemples.
 4. Cliquez sur **Exécuter la requête**. Vous verrez _`<Entity>`requête est valide_ un aperçu en direct et un résumé (`N rows · N time points · N groups`). Un avertissement _série clairsemée_ s’affiche lorsqu’il y a moins de trois points temporels.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Le Builder couvre les requêtes les plus courantes. Basculez vers SQL pour `apdex`, `percentage`, `rate`, `FILTER`, plusieurs agrégats, `OR`, `IN`, plusieurs facettes ou `ORDER BY`.
 
-#### Étape 5 : Configurer l’apparence
+### Étape 5 : Configurer l’apparence
 
 | Champ | Remarques |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -72,11 +77,11 @@ Cliquez sur **Ajouter un widget**. La boîte de dialogue comporte trois modes : 
 | **Unité** | Facultatif ; jusqu’à 40 caractères (`ms`, `%`, `req/s`, `MB`, `bytes`). Laissez vide pour utiliser l’unité déduite (par exemple `ms` pour `duration`, `%` pour `CpuUtilization`). |
 | **Seuils de couleur** | Widgets numériques uniquement. Jusqu&#39;à 10 bandes de la forme _au `value` ou plus → Vert/Jaune/Rouge_. La bande correspondante la plus élevée gagne. |
 
-#### Étape 6 : enregistrer le widget, puis le tableau de bord
+### Étape 6 : enregistrer le widget, puis le tableau de bord
 
 Le **widget d’enregistrement** n’est activé qu’après le renvoi des données par une exécution. Les nouveaux widgets comportent 6 colonnes × 3 lignes et sont compressés à raison de deux par ligne. Organisez-les, puis cliquez sur **Enregistrer** dans la barre supérieure.
 
-### Choisir le bon graphique
+## Choisir le bon graphique
 
 | Forme de requête | Meilleur graphique | Pourquoi ? |
 | ------------------------------------------------- | ------------------- | ---------------------------------------------- |
@@ -89,17 +94,18 @@ Le **widget d’enregistrement** n’est activé qu’après le renvoi des donn�
 
 Lorsque la ligne unique d’un widget Nombre contient une valeur de texte (par exemple `latest(host)`), le widget l’affiche sous forme de sous-titre.
 
-### Widgets de texte : notes et en-têtes de section
+## Widgets de texte : notes et en-têtes de section
 
 **Ajouter un widget → Texte** :
 
 - **Remarque** : texte brut (jusqu’à 4 000 caractères, lignes vides conservées). Utilisez-le pour les liens de runbook, les propriétaires et les définitions de SLO. Les `{{variables}}` sont rendues.
 - **En-tête de section** : cochez la case _En-tête de section_. Il s’étend sur toute la largeur et son chevron réduit chaque widget situé en dessous, jusqu’à l’en-tête de section suivant. Utilisez-le pour des regroupements tels que **PUBLICATION**, **AUTEUR** et **DISPATCHER**.
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Les titres des widgets se terminant par `- PUBLISH` ou `- AUTHOR` reçoivent une indice de couleur subtil, ce qui facilite la numérisation des tableaux de bord AEM par niveau.
 
-### Sélecteur d’heure
+## Sélecteur d’heure
 
 - Il définit la fenêtre pour **chaque** widget et pour les options de variable pilotée par les requêtes.
 - Il remplace `SINCE` / `UNTIL` dans les requêtes de widget.
@@ -108,18 +114,19 @@ Lorsque la ligne unique d’un widget Nombre contient une valeur de texte (par e
 - Le sous-titre de chaque widget affiche la fenêtre réellement appliquée ; par exemple, _Depuis il y a 1 heure_.
 - Les résultats sont mis en cache pendant 30 secondes. Utilisez le bouton d’actualisation pour forcer une nouvelle exécution.
 
-### Variables
+## Variables
 
 Les variables permettent à un tableau de bord de servir de nombreux contextes, tels qu’un service, un environnement ou un seuil à la fois. Ils sont abordés en détail dans le [tutoriel 3](#87-make-dashboards-reusable-with-variables).
 
-&#x200B;> [!WARNING]
-> **Limites connues dans la version actuelle :** `{{variables}}` fonctionner dans les widgets **titres** et **texte**. Dans le widget **SQL**, ils s’affichent dans le tableau de bord, mais l’aperçu **Ajouter un widget** et le **Enregistrer** côté serveur vérifient et rejettent le jeton `{{name}}` brut avec _Caractère inattendu &#39;&lbrace;&#39;_. Tant que ce problème n’est pas résolu, utilisez des valeurs littérales dans les requêtes de widget et utilisez **Dupliquer** pour créer des variantes.
+>[!WARNING]
+>
+> **Limites connues dans la version actuelle :** `{{variables}}` fonctionner dans les widgets **titres** et **texte**. Dans le widget **SQL**, le rendu est effectué sur le tableau de bord, mais la prévisualisation **Ajouter un widget** et la prévisualisation **Enregistrer** côté serveur vérifient et rejettent le jeton `{{name}}` brut avec `Unexpected character '{'`. Tant que ce problème n’est pas résolu, utilisez des valeurs littérales dans les requêtes de widget et utilisez **Dupliquer** pour créer des variantes.
 
-### Widgets de formule
+## Widgets de formule
 
-Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [&#x200B; Tutoriel 3](#86-combine-queries-with-formula-widgets).
+Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [ Tutoriel 3](#86-combine-queries-with-formula-widgets).
 
-### Partager, exporter et importer
+## Partager, exporter et importer
 
 | Action | Effets |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -128,10 +135,11 @@ Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, 
 | **Importer** | Charge une exportation JSON **dans le tableau de bord ouvert** en remplaçant ses onglets et variables. Cliquez ensuite sur **Enregistrer**. Conseil : créez d’abord un tableau de bord vide, puis importez-le. |
 | **CSV/PNG** | Téléchargements par widget à partir de l’en-tête du widget. |
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > L’exportation et l’importation vous permettent de contrôler les versions des tableaux de bord dans Git et de promouvoir un tableau de bord d’un client à un autre. Le format du fichier est décrit dans l’[Annexe](#142-export-file-format).
 
-### Conseils pour optimiser les performances des tableaux de bord et des graphiques
+## Conseils pour optimiser les performances des tableaux de bord et des graphiques
 
 - **Utilisez des tableaux pour les jeux de résultats volumineux** au lieu de barres ou de lignes de séries multiples.
 - **Fractionner les tableaux de bord occupés en onglets.** Seuls les widgets de l’onglet visible s’exécutent.

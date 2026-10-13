@@ -1,9 +1,12 @@
 ---
-source-git-commit: 05ed98c07602488843c52cd262af2d8cc204fef1
+title: Prise en main des graphiques et des tableaux de bord
+description: Découvrez comment visualiser les données d’Observability Insights avec des graphiques et des tableaux de bord.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '292'
+source-wordcount: '309'
 ht-degree: 3%
 ---
+
 ## Tableaux de bord et graphiques : visualisation des données {#charts-and-dashboards-visualizing-your-data}
 
 Les requêtes trouvent les informations dont vous avez besoin. Les graphiques et les tableaux de bord rendent ces informations utiles à votre organisation. Ce document explique comment les résultats SQL deviennent des graphiques et comment créer, organiser et partager des tableaux de bord.

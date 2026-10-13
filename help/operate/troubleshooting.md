@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Résolution des problèmes
+description: Dépannage des requêtes SQL, des graphiques et des tableaux de bord dans Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '327'
+source-wordcount: '337'
 ht-degree: 6%
 ---
+
 ## Résolution des problèmes {#troubleshooting}
 
 Des messages d’erreur s’affichent sous l’éditeur lorsque vous **Valider** ou **Exécuter** une requête, ainsi que sur le widget lui-même dans un tableau de bord. Recherchez le message dans la première colonne.

@@ -1,16 +1,20 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: Demander le guide pas à pas
+description: Utilisez les recettes de requête SQL pour étudier la télémétrie des applications et des infrastructures dans Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '565'
+source-wordcount: '580'
 ht-degree: 0%
 ---
+
 ## Demander le guide pas à pas {#query-cookbook}
 
 Le guide pas à pas est une bibliothèque de requêtes prêtes à l’emploi, regroupées par sujet. Chaque requête est précédée du type de graphique qui lui convient le mieux, en **gras**. Les clauses de temps sont ignorées, car le sélecteur de temps contrôle la fenêtre.
 
 **Dans ce document :** [10.1 Découverte de données](#101-data-discovery) · [10.2 Débit](#102-throughput) · [10.3 Latence](#103-latency) · [10.4 Erreurs](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 Services et hôtes](#106-services-hosts--instances) · [10.7 Dépendances](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 Infrastructure](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Remplacez les exemples de valeurs tels que `'checkout'` ou `'web-publish-01'` par les valeurs réelles de votre client. Les requêtes de découverte de données ci-dessous les répertorient.
 
 ### Découverte des données
@@ -385,7 +389,8 @@ SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 SELECT average(value) AS userPct FROM CpuUserPercent TIMESERIES AUTO
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL lit une entité par requête, donc user/system/iowait/steal a besoin de quatre widgets côte à côte (voir [blueprint 11.6](#116-infrastructure-capacity-board) W7-W10). Une formule les réduirait en un seul nombre, et non en quatre séries.
 
 **Bar** — CPU p95 par hôte :

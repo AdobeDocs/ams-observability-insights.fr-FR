@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Annexe
+description: Consultez des informations supplémentaires pour les requêtes SQL et les tableaux de bord Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: '145'
 ht-degree: 7%
 ---
+
 ## Annexe {#appendix}
 
 **Dans ce document :** [14.1 Limites](#141-limits) · [14.2 Format du fichier d’exportation](#142-export-file-format) · [14.3 Aide-mémoire d’une page](#143-one-page-cheat-sheet)

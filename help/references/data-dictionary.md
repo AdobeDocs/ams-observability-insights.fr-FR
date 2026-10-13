@@ -1,9 +1,12 @@
 ---
-source-git-commit: 4949fcad799260aa73354a8c0b9d79e6394cb257
+title: Dictionnaire de données
+description: Référencez les entités et les attributs disponibles pour les requêtes SQL Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '585'
+source-wordcount: '598'
 ht-degree: 21%
 ---
+
 ## Dictionnaire de données {#data-dictionary}
 
 Il s’agit de chaque entité et attribut que vous pouvez interroger. Le catalogue en direct, avec ses descriptions, se trouve également dans le panneau **Guide de requête** dans Explorer et dans la boîte de dialogue Ajouter un widget.
@@ -109,7 +112,8 @@ Chaque entité traitée enveloppe une mesure OpenTelemetry avec le filtre approp
 | `JvmCpuRecentUtilization` | CPU du processus JVM | % |         | cumul de 1 minute |
 | `DispatcherRequestRate` | Requêtes HTTP du Dispatcher AEM | req/s | ✔ |                                              |
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Les mesures de mémoire JVM sont signalées **par pool de mémoire**, donc `average(value)` sur les moyennes `JvmHeapUsed`/`JvmHeapLimit` entre les pools. Utilisez `FACET host, pool` pour obtenir une vue exacte par pool.
 
 ### `SpanBreakdown` : composition des transactions pré-agrégées

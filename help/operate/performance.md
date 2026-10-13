@@ -1,9 +1,12 @@
 ---
-source-git-commit: ec98f6bd132cadaba1da7c4fb727d7e031790645
+title: Performance
+description: Améliorez les performances des requêtes, des graphiques et des tableaux de bord dans Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '217'
+source-wordcount: '227'
 ht-degree: 3%
 ---
+
 ## Performance {#performance}
 
 Chaque requête s’exécute avec un délai d’expiration de 15 secondes et un budget de lecture d’octets. Ce document explique comment Observability Insights accélère automatiquement les requêtes et comment concevoir des tableaux de bord qui restent rapides à tout moment.

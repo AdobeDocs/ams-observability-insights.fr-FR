@@ -1,9 +1,12 @@
 ---
-source-git-commit: 263ba9e9b3eb1c6e4dd253ca03bd0ce8954c588b
+title: 'Tutoriel 2 : Contrôler vos données'
+description: Découvrez comment filtrer, regrouper et contrôler les résultats des requêtes dans Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '344'
+source-wordcount: '361'
 ht-degree: 0%
 ---
+
 ## Tutoriel 2 : Contrôler vos données {#tutorial-2-control-your-data}
 
 Dans ce tutoriel, vous découvrirez les fonctions et les clauses qui transforment les décomptes bruts en réponses : décomptes distincts, dernières valeurs, pourcentages, centiles, caractères génériques, tri et regroupement multidimensionnel.
@@ -66,7 +69,8 @@ Les moyennes masquent les valeurs aberrantes. Les centiles montrent ce que la pl
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > p50, p95 et p99 de `Transaction.duration` sont servis à partir de rollups sur de longues fenêtres, de sorte qu&#39;ils restent rapides pour des vues hebdomadaires.
 
 ### Rendre les résultats lisibles avec des libellés
@@ -77,7 +81,8 @@ Utilisez des `AS` avec des guillemets simples pour les libellés contenant des e
 SELECT count(*) AS 'Requests', percentile(duration, 95) AS 'p95 (ms)' FROM Transaction FACET service
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > Les alias s’appliquent uniquement aux éléments `SELECT`. Les colonnes à facettes sont toujours étiquetées avec le nom d’attribut.
 
 ### Modèles et listes de correspondance
@@ -100,7 +105,8 @@ Correspondance avec une liste comportant `IN` et `NOT IN` (jusqu’à 100 valeur
 SELECT count(*) AS requests FROM Transaction WHERE http.method IN ('POST', 'PUT', 'DELETE') FACET service
 ```
 
-&#x200B;> [!NOTE]
+>[!NOTE]
+>
 > SQL n&#39;a pas d&#39;expressions régulières (`RLIKE`). Combinez des modèles de `LIKE` avec des `OR` ou utilisez des `IN`.
 
 ### Trier et classer par `ORDER BY`
@@ -117,7 +123,8 @@ Ou les services les moins utilisés en premier :
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
-&#x200B;> [!TIP]
+>[!TIP]
+>
 > Il n&#39;y a pas de `HAVING`. Pour rechercher uniquement les opérations « occupées », classez par `requests` et conservez le N premiers ou ajoutez une `WHERE` qui supprime le bruit (par exemple `WHERE http.method != 'OPTIONS'`).
 
 ### Regrouper par plusieurs attributs

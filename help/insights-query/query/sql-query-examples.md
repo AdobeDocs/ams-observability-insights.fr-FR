@@ -1,10 +1,13 @@
 ---
-source-git-commit: d3cd77e213674587152d6d33efa65328f420a547
+title: Exemples de requêtes SQL
+description: Explorez des exemples de requête SQL pour la télémétrie Observability Insights.
+source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
 workflow-type: tm+mt
-source-wordcount: '295'
+source-wordcount: '306'
 ht-degree: 10%
 ---
-### Exemples de requêtes SQL
+
+## Exemples de requêtes SQL
 
 Voici un exemple plus complet. Pour cette requête :
 
@@ -89,7 +92,7 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 
 <a id="what-sql-doesnt-do"></a>
 
-### Ce que SQL ne fait pas
+## Ce que SQL ne fait pas
 
 SQL est délibérément petit. Cela permet de garder les requêtes sécurisées, rapides et isolées par le client ou la cliente. Lorsque vous avez besoin de l’une de ces fonctionnalités, utilisez l’alternative .
 
