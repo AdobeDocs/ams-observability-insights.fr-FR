@@ -124,7 +124,7 @@ Les variables permettent à un tableau de bord de servir de nombreux contextes, 
 
 ## Widgets de formule
 
-Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [ Tutoriel 3](#86-combine-queries-with-formula-widgets).
+Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [&#x200B; Tutoriel 3](#86-combine-queries-with-formula-widgets).
 
 ## Partager, exporter et importer
 
