@@ -38,7 +38,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-> [!WARNING]
+&#x200B;> [!WARNING]
 > Toujours facettiser les `rate()` par `host` (et par `device` pour les disques) ou les filtrer sur un hôte. Sans cela, les lectures des différents hôtes se mélangent et le résultat est dénué de sens.
 
 Pour obtenir un taux de **requête** à partir des traces, comptez plutôt les requêtes dans des intervalles fixes. Cela donne des requêtes par minute :
@@ -146,7 +146,7 @@ Règles pour les requêtes de formule :
 | Une mesure chacune | Chaque requête renvoie exactement un agrégat et aucune `FACET` |
 | Données manquantes | Une valeur manquante ou une division par zéro génère un point vide, jamais `Infinity` ni `NaN` |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Utilisez des `TIMESERIES AUTO` dans chaque requête d’une formule de série temporelle. Comme les requêtes partagent une fenêtre, elles sont toujours résolues sur la même taille de compartiment.
 
 ### Rendre les tableaux de bord réutilisables avec des variables
@@ -187,8 +187,8 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Les options sont actualisées lorsque le client ou le sélecteur d’heure change et sont triées par ordre alphabétique. Lorsque la sélection en cours n’est plus valide, la première valeur (sélection unique) ou toutes les valeurs (sélection multiple) sont automatiquement sélectionnées. La requête d’une variable ne peut pas référencer d’autres variables.
 
-> [!WARNING]
-> **Limitation actuelle de build.** La substitution se produit dans la grille du tableau de bord, mais l’aperçu **Ajouter un widget** et le contrôle d’enregistrement côté serveur **server-side save check** reçoivent le jeton de `{{name}}` brut et le rejettent avec _caractère inattendu &#39;{&#39;_. En pratique :
+&#x200B;> [!WARNING]
+> **Limitation actuelle de build.** La substitution se produit dans la grille du tableau de bord, mais l’aperçu **Ajouter un widget** et le contrôle d’enregistrement côté serveur **server-side save check** reçoivent le jeton de `{{name}}` brut et le rejettent avec _caractère inattendu &#39;&lbrace;&#39;_. En pratique :
 >
 > - `{{variables}}` dans les widgets **titres de widget** et **texte** fonctionnent de bout en bout.
 > - `{{variables}}` à l’intérieur du **widget SQL** le rendu est correct après une **importation**, mais le tableau de bord ne peut pas être **enregistré** tant que de tels widgets existent.

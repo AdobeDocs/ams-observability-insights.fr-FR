@@ -109,7 +109,7 @@ Chaque entité traitée enveloppe une mesure OpenTelemetry avec le filtre approp
 | `JvmCpuRecentUtilization` | CPU du processus JVM | % |         | cumul de 1 minute |
 | `DispatcherRequestRate` | Requêtes HTTP du Dispatcher AEM | req/s | ✔ |                                              |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Les mesures de mémoire JVM sont signalées **par pool de mémoire**, donc `average(value)` sur les moyennes `JvmHeapUsed`/`JvmHeapLimit` entre les pools. Utilisez `FACET host, pool` pour obtenir une vue exacte par pool.
 
 ### `SpanBreakdown` : composition des transactions pré-agrégées

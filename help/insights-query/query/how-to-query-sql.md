@@ -12,7 +12,7 @@ Avant d’utiliser un outil, il est utile de savoir comment il fonctionne. Ce do
 
 La meilleure façon d’utiliser SQL est d’ouvrir **Explorer** et de l’essayer avec vos propres données.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > SQL est en lecture seule. Il ne peut pas modifier ni supprimer des données, et chaque requête est limitée à votre client.
 
 1. **Sélectionnez un client** dans le sélecteur de client en haut de l’application, SQL a besoin d’un seul client.
@@ -37,7 +37,7 @@ FROM Transaction SELECT count(*) FACET service
 
 Cela comptabilise les requêtes par service, ce qui vous indique quels services génèrent des rapports.
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > **Découvrir avant de créer.** La disponibilité des attributs dépend de la manière dont chaque service est instrumenté. Exécutez d’abord les [requêtes de découverte](#101-data-discovery) sur un nouveau client pour voir quels services, hôtes, attributs et mesures contiennent réellement des données.
 
 ### Exécution d’une requête
@@ -87,5 +87,5 @@ Chaque requête renvoie l&#39;une des quatre formes. La forme décide quels grap
 | **Explorer** | Sélecteur d’heure global. Les `SINCE`/`UNTIL` sont ignorés lorsqu’une plage de sélecteur est active. |
 | **API sans plage explicite** | `SINCE`/`UNTIL` dans la requête, par défaut la dernière heure. |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Étant donné que le sélecteur gagne dans les tableaux de bord et dans Explorer, ce guide ne prend généralement pas en `SINCE` les requêtes des tableaux de bord. Il convient toujours de définir un sélecteur de l’heure pour les requêtes.

@@ -36,7 +36,7 @@ ht-degree: 2%
 | **Grille** | 12 colonnes. Faites glisser les widgets près de la poignée, redimensionnez-les depuis le coin (minimum 2×2). |
 | **En-tête du widget** (au survol) | Télécharger CSV, Télécharger PNG, Modifier, Dupliquer, Supprimer, faire glisser la poignée |
 
-> [!IMPORTANT]
+&#x200B;> [!IMPORTANT]
 > **L’enregistrement est explicite.** Les modifications de disposition, les nouveaux widgets, onglets et variables restent dans votre navigateur jusqu’à ce que vous cliquiez sur **Enregistrer**. Le bouton indique _Enregistrement... → enregistré_ ou _Échec de l’enregistrement_ (voir [Dépannage](#troubleshooting)).
 
 #### Étape 4 : ajouter un widget
@@ -60,7 +60,7 @@ Cliquez sur **Ajouter un widget**. La boîte de dialogue comporte trois modes : 
 3. Utilisez le panneau **Guide de requête** pour parcourir les entités, les attributs et les exemples.
 4. Cliquez sur **Exécuter la requête**. Vous verrez _`<Entity>`requête est valide_ un aperçu en direct et un résumé (`N rows · N time points · N groups`). Un avertissement _série clairsemée_ s’affiche lorsqu’il y a moins de trois points temporels.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Le Builder couvre les requêtes les plus courantes. Basculez vers SQL pour `apdex`, `percentage`, `rate`, `FILTER`, plusieurs agrégats, `OR`, `IN`, plusieurs facettes ou `ORDER BY`.
 
 #### Étape 5 : Configurer l’apparence
@@ -96,7 +96,7 @@ Lorsque la ligne unique d’un widget Nombre contient une valeur de texte (par e
 - **Remarque** : texte brut (jusqu’à 4 000 caractères, lignes vides conservées). Utilisez-le pour les liens de runbook, les propriétaires et les définitions de SLO. Les `{{variables}}` sont rendues.
 - **En-tête de section** : cochez la case _En-tête de section_. Il s’étend sur toute la largeur et son chevron réduit chaque widget situé en dessous, jusqu’à l’en-tête de section suivant. Utilisez-le pour des regroupements tels que **PUBLICATION**, **AUTEUR** et **DISPATCHER**.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Les titres des widgets se terminant par `- PUBLISH` ou `- AUTHOR` reçoivent une indice de couleur subtil, ce qui facilite la numérisation des tableaux de bord AEM par niveau.
 
 ### Sélecteur d’heure
@@ -112,12 +112,12 @@ Lorsque la ligne unique d’un widget Nombre contient une valeur de texte (par e
 
 Les variables permettent à un tableau de bord de servir de nombreux contextes, tels qu’un service, un environnement ou un seuil à la fois. Ils sont abordés en détail dans le [tutoriel 3](#87-make-dashboards-reusable-with-variables).
 
-> [!WARNING]
-> **Limites connues dans la version actuelle :** `{{variables}}` fonctionner dans les widgets **titres** et **texte**. Dans le widget **SQL**, ils s’affichent dans le tableau de bord, mais l’aperçu **Ajouter un widget** et le **Enregistrer** côté serveur vérifient et rejettent le jeton `{{name}}` brut avec _Caractère inattendu &#39;{&#39;_. Tant que ce problème n’est pas résolu, utilisez des valeurs littérales dans les requêtes de widget et utilisez **Dupliquer** pour créer des variantes.
+&#x200B;> [!WARNING]
+> **Limites connues dans la version actuelle :** `{{variables}}` fonctionner dans les widgets **titres** et **texte**. Dans le widget **SQL**, ils s’affichent dans le tableau de bord, mais l’aperçu **Ajouter un widget** et le **Enregistrer** côté serveur vérifient et rejettent le jeton `{{name}}` brut avec _Caractère inattendu &#39;&lbrace;&#39;_. Tant que ce problème n’est pas résolu, utilisez des valeurs littérales dans les requêtes de widget et utilisez **Dupliquer** pour créer des variantes.
 
 ### Widgets de formule
 
-Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [ Tutoriel 3](#86-combine-queries-with-formula-widgets).
+Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [&#x200B; Tutoriel 3](#86-combine-queries-with-formula-widgets).
 
 ### Partager, exporter et importer
 
@@ -128,7 +128,7 @@ Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, 
 | **Importer** | Charge une exportation JSON **dans le tableau de bord ouvert** en remplaçant ses onglets et variables. Cliquez ensuite sur **Enregistrer**. Conseil : créez d’abord un tableau de bord vide, puis importez-le. |
 | **CSV/PNG** | Téléchargements par widget à partir de l’en-tête du widget. |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > L’exportation et l’importation vous permettent de contrôler les versions des tableaux de bord dans Git et de promouvoir un tableau de bord d’un client à un autre. Le format du fichier est décrit dans l’[Annexe](#142-export-file-format).
 
 ### Conseils pour optimiser les performances des tableaux de bord et des graphiques

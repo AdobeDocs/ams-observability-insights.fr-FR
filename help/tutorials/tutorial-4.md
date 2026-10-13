@@ -64,7 +64,7 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT average(avgDurationMs) AS avgMs FROM SpanBreakdown FACET segment TIMESERIES AUTO LIMIT 8
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > `avgDurationMs` n’est pas automatiquement balisé avec une unité. Définissez le widget **Unit** sur `ms`.
 
 ### Découvrir et interroger n’importe quelle mesure
@@ -91,7 +91,7 @@ Pour voir quels **attributs d’étendue** sont renseignés pour chaque service,
 SELECT count(*) FILTER (WHERE http.route != '') AS withRoute, count(*) FILTER (WHERE db.system != '') AS dbCalls, count(*) FILTER (WHERE peer.service != '') AS withPeer, count(*) FILTER (WHERE error.type != '') AS withErrorType FROM Span FACET service LIMIT 50
 ```
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Lorsqu’une entité sélectionnée existe (par exemple, `CpuUtilization`), préférez-la à `MetricGauge`. Il applique le filtre approprié et la conversion de l’unité, et peut être accéléré par cumul.
 
 ### Choisir l’entité de suivi appropriée

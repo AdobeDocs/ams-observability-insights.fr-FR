@@ -23,7 +23,7 @@ Chaque plan directeur est un tableau de bord complet et complexe. Il répertorie
 
 **Légende du graphique :** **N** = Nombre, **L** = Ligne, **A** = Aire, **B** = Barre, **P** = Secteurs, **T** = Tableau.
 
----
+&#x200B;---
 
 ### Signaux d&#39;or / carte SLO
 
@@ -120,7 +120,7 @@ SELECT average(value) AS memory FROM MemoryUtilization FACET host TIMESERIES AUT
 SELECT average(value) AS load5m FROM LoadAverage5m FACET host TIMESERIES AUTO LIMIT 10
 ```
 
----
+&#x200B;---
 
 ### Panorama de tri des erreurs
 
@@ -207,7 +207,7 @@ SELECT count(*) AS failures, percentile(duration, 95) AS p95 FROM Span WHERE kin
 SELECT timestamp, service, host, name, urlPath, http.statusCode, duration, statusMessage, traceId FROM Transaction WHERE status = 'Error' LIMIT 200
 ```
 
----
+&#x200B;---
 
 ### Tableau détaillé de la latence
 
@@ -276,7 +276,7 @@ SELECT sum(callCount) AS calls, average(avgDurationMs) AS avgMs FROM SpanBreakdo
 SELECT count(*) AS calls, max(duration) AS slowestMs, latest(traceId, duration) AS slowestTraceId, latest(host, duration) AS slowestHost FROM Transaction FACET name ORDER BY slowestMs DESC LIMIT 50
 ```
 
----
+&#x200B;---
 
 ### Panorama des dépendances en aval
 
@@ -357,7 +357,7 @@ SELECT count(*) FILTER (WHERE kind = 'Producer') AS produced, count(*) FILTER (W
 SELECT count(*) AS calls, percentile(duration, 95) AS p95, percentage(*, WHERE status = 'Error') AS errorPct FROM Span WHERE rpc.system != '' FACET service, rpc.system, rpc.method ORDER BY calls DESC LIMIT 50
 ```
 
----
+&#x200B;---
 
 ### Panorama AEM Auteur / Publication / Dispatcher
 
@@ -514,7 +514,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 SELECT percentOfTotal(duration) AS timeShare FROM Span WHERE sling.servlet != '' FACET sling.servlet LIMIT 20
 ```
 
----
+&#x200B;---
 
 ### Comité de la capacité de l&#39;infrastructure
 
@@ -661,7 +661,7 @@ Formule :
 netRx + netTx
 ```
 
----
+&#x200B;---
 
 ### Carte d’intégrité JVM
 
@@ -733,7 +733,7 @@ Formule :
 (used / limit) * 100
 ```
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Pour étendre une formule à un hôte, ajoutez des `WHERE host = 'my-publish-01'` aux requêtes **les deux**.
 
 **W6 · Tas utilisé par l’hôte** — L, `MB`, 6×4
@@ -766,7 +766,7 @@ SELECT average(value) AS jvmCpu FROM JvmCpuRecentUtilization FACET host TIMESERI
 SELECT latest(value) AS bytesUsed, max(value) AS peakBytes FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool ORDER BY peakBytes DESC LIMIT 100
 ```
 
----
+&#x200B;---
 
 ### 11.8 Panneau mural exécutif/CNP
 
@@ -849,7 +849,7 @@ SELECT count(*) AS requests FROM Transaction WHERE hostTierPrefix != '' FACET ho
 
 **W10 · SLO note** — Widget Texte, 12×1.
 
----
+&#x200B;---
 
 ### Ratios &amp; Headroom board (Vitrine de formule)
 
@@ -995,13 +995,13 @@ Formule (taux de combustion : 1,0 = consommation du budget exactement selon le c
 (errors / total) / 0.001
 ```
 
----
+&#x200B;---
 
 ### Explorateur de services (piloté par les variables)
 
 **Objectif :** un panorama que toute équipe peut pointer vers _son service et son environnement_
 
-> [!WARNING]
+&#x200B;> [!WARNING]
 > Consultez la **limitation de build actuelle** dans [tutoriel 3, étape 8.7](#87-make-dashboards-reusable-with-variables) : les `{{variables}}` dans le widget SQL ne peuvent pas encore être prévisualisées ni enregistrées. Tant que cela n’est pas corrigé, remplacez chaque `{{…}}` par un littéral (par exemple, `'checkout'`) et utilisez _Dupliquer_ pour cloner la carte par service. La conception ci-dessous est prête pour le cas où la substitution serait prise en charge de bout en bout.
 
 **Variables**

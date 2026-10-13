@@ -13,7 +13,7 @@ ht-degree: 1%
 | **S’applique à** | Interface utilisateur d’Insights → **Explorer** et **Tableaux de bord** (tableaux de bord personnalisés) |
 | **Audience** | Ingénieurs, ingénieurs et utilisatrices et utilisateurs et utilisatrices expérimentés qui connaissent SQL |
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Chaque bloc de code marqué `sql` est une requête SQL que vous pouvez coller directement dans **Explorer → SQL** ou dans **Tableaux de bord → Ajouter un widget → SQL**.
 
 ## Prise en main de SQL : le langage de votre télémétrie {#get-started-with-sql-the-language-of-your-telemetry}
@@ -38,7 +38,7 @@ Utilisez SQL pour :
 
 SQL prend en charge les requêtes **événement**, qui renvoient des lignes de requête individuelles, et les requêtes **agrégées**, qui renvoient des totaux, des centiles, des taux, des répartitions et des séries temporelles.
 
-> [!TIP]
+&#x200B;> [!TIP]
 > Les modèles de **Tableaux de bord → Créer un tableau de bord** sont entièrement créés à partir de SQL. Ouvrez n’importe quel widget de modèle avec l’icône en forme de crayon pour afficher sa requête et en tirer des enseignements.
 
 ### Ce que vous pouvez interroger
@@ -52,7 +52,7 @@ SQL peut interroger quatre familles de données. La liste complète se trouve da
 | **Mesures génériques** | `MetricGauge`, `MetricSum` | Toute mesure OpenTelemetry par nom, découverte de mesures |
 | **Composition d’étendue préagrégée** | `SpanBreakdown` | Les opérations enfants qui constituent une transaction |
 
-> [!NOTE]
+&#x200B;> [!NOTE]
 > Les journaux, les définitions d’alerte et les relations d’inventaire ne sont pas disponibles.
 
 ### Où utiliser SQL
