@@ -26,21 +26,21 @@ ht-degree: 4%
 | Section | Doc | Ce que vous apprendrez : |
 | --------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | **Commencer** | [1. Prise en main de SQL](#1-get-started-with-SQL-the-language-of-your-telemetry) | Ce qu’est SQL, ce que vous pouvez demander, où l’utiliser, les règles de base |
-|                 | [2. Comment effectuer des requêtes avec SQL ](#2-how-to-query-with-SQL-the-mechanics-of-querying) | Exploration des données, exécution d’une requête, exemples de travail |
+|                 | [2. Comment effectuer des requêtes avec SQL &#x200B;](#2-how-to-query-with-SQL-the-mechanics-of-querying) | Exploration des données, exécution d’une requête, exemples de travail |
 |                 | [3. Tableaux de bord et graphiques](#3-charts-and-dashboards-visualizing-your-data) | Comment transformer des requêtes en graphiques et créer des tableaux de bord étape par étape |
-| **Référence** | [4. Référence SQL ](#4-SQL-reference) | Chaque clause, fonction et opérateur, avec des exemples |
-|                 | [5. Dictionnaire de données ](#5-data-dictionary) | Chaque entité et attribut que vous pouvez interroger |
+| **Référence** | [4. Référence SQL &#x200B;](#4-SQL-reference) | Chaque clause, fonction et opérateur, avec des exemples |
+|                 | [5. Dictionnaire de données &#x200B;](#5-data-dictionary) | Chaque entité et attribut que vous pouvez interroger |
 | **Tutoriels** | [6. Tutoriel 1 : Vos premières requêtes](#6-tutorial-1-your-first-queries) | `SELECT`, `FROM`, `LIMIT`, agrégats, heure, `TIMESERIES`, `WHERE`, `FACET` |
 |                 | [7. Tutoriel 2 : Contrôler vos données](#7-tutorial-2-control-your-data) | Valeurs uniques, au plus tard/au plus tôt, pourcentages, centiles, libellés, caractères génériques, classement |
 |                 | [8. Tutoriel 3 : progresser dans votre tableau de bord](#8-tutorial-3-advance-your-dashboarding) | Agrégats conditionnels, Apdex, taux, histogrammes, formules, variables, sections |
 |                 | [9. Didacticiel 4 : Fonctions avancées](#9-tutorial-4-advanced-functions) | `stddev`, `derivative`, `latest` de classement, part du total, composition d’étendue, découverte de mesures |
-| **Exemples** | [10. Demander le guide pas à pas ](#10-query-cookbook) | Plus de 100 requêtes prêtes à l’emploi par rubrique (y compris AEM) |
-|                 | [11. Plans directeurs de tableaux de bord ](#11-dashboard-blueprints) | Dix tableaux de bord complexes et complets avec la requête de chaque widget |
-| **Fonctionner** | [12. Performances ](#12-performance) | Cumuls, requêtes de budgets et comment garder les tableaux de bord rapides |
-|                 | [13. Dépannage ](#13-troubleshooting) | Chaque message d’erreur, ce qu’il signifie et comment le corriger |
-|                 | [14. Annexe ](#14-appendix) | Limites, format de fichier d’exportation, aide-mémoire d’une page |
+| **Exemples** | [10. Demander le guide pas à pas &#x200B;](#10-query-cookbook) | Plus de 100 requêtes prêtes à l’emploi par rubrique (y compris AEM) |
+|                 | [11. Plans directeurs de tableaux de bord &#x200B;](#11-dashboard-blueprints) | Dix tableaux de bord complexes et complets avec la requête de chaque widget |
+| **Fonctionner** | [12. Performances &#x200B;](#12-performance) | Cumuls, requêtes de budgets et comment garder les tableaux de bord rapides |
+|                 | [13. Dépannage &#x200B;](#13-troubleshooting) | Chaque message d’erreur, ce qu’il signifie et comment le corriger |
+|                 | [14. Annexe &#x200B;](#14-appendix) | Limites, format de fichier d’exportation, aide-mémoire d’une page |
 
-# Commencer
+&#x200B;# Commencer
 
 ## &#x200B;1. Prise en main de SQL : le langage de votre télémétrie
 
@@ -131,7 +131,7 @@ Les règles SQL sont les suivantes :
 
 ### Étapes suivantes
 
-- [Comment effectuer des requêtes avec SQL ](#2-how-to-query-with-SQL-the-mechanics-of-querying) : explorez les données et comprenez comment les requêtes s’exécutent.
+- [Comment effectuer des requêtes avec SQL &#x200B;](#2-how-to-query-with-SQL-the-mechanics-of-querying) : explorez les données et comprenez comment les requêtes s’exécutent.
 - [Tableaux de bord et graphiques](#3-charts-and-dashboards-visualizing-your-data) : visualisez vos résultats.
 - [Tutoriel 1 : Vos premières requêtes](#6-tutorial-1-your-first-queries) : une présentation pratique.
 - [Référence SQL](#4-SQL-reference) : syntaxe complète, clauses et fonctions.
@@ -480,7 +480,7 @@ Les variables permettent à un tableau de bord de servir de nombreux contextes, 
 
 ### Widgets de formule
 
-Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [ Tutoriel 3](#86-combine-queries-with-formula-widgets).
+Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [&#x200B; Tutoriel 3](#86-combine-queries-with-formula-widgets).
 
 ### Partager, exporter et importer
 
@@ -505,7 +505,7 @@ Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, 
 
 [↑ Haut de la page](#top)
 
-# Référence
+&#x200B;# Référence
 
 ## &#x200B;4. Référence SQL
 
@@ -698,7 +698,7 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 - Les dates absolues (`SINCE '2026-01-01'`) et `TODAY` / `YESTERDAY` ne sont pas prises en charge.
 
 >[!IMPORTANT]
-> Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure) remplace** `SINCE` et `UNTIL`. Voir [ Priorité de la fenêtre temporelle ](#time-window-precedence).
+> Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure) remplace** `SINCE` et `UNTIL`. Voir [&#x200B; Priorité de la fenêtre temporelle &#x200B;](#time-window-precedence).
 
 </details>
 
@@ -819,7 +819,7 @@ SELECT average(duration) AS avgMs FROM Transaction FACET service TIMESERIES AUTO
 <summary><code>count(*)</code> / <code>count(attribute)</code></summary>
 
 - `count(*)` compte les lignes.
-- `count(attribute)` compte les lignes dont l&#39;attribut n&#39;est **pas NULL**. Pour les attributs de chaîne, les valeurs manquantes sont vides (`''`) plutôt que NULL. Elles sont donc toujours comptabilisées (voir [ Gestion des types ](#46-type-handling-blank-vs-null)).
+- `count(attribute)` compte les lignes dont l&#39;attribut n&#39;est **pas NULL**. Pour les attributs de chaîne, les valeurs manquantes sont vides (`''`) plutôt que NULL. Elles sont donc toujours comptabilisées (voir [&#x200B; Gestion des types &#x200B;](#46-type-handling-blank-vs-null)).
 
 ```sql
 SELECT count(*) AS requests, count(http.statusCode) AS withStatusCode FROM Transaction
@@ -1062,8 +1062,8 @@ Si vous connaissez la requête existante, voici le détail de la migration
 | `derivative(x, 1 minute)` | `derivative(x)` + `TIMESERIES` | Par seconde |
 | `uniques(x)` | `count(*) … FACET x LIMIT n` |                                                              |
 | `keyset()` / `SHOW EVENT TYPES` | [Requêtes de découverte](#101-data-discovery) ou le panneau du guide de requête |                                                              |
-| `histogram(duration, …)` | `FILTER` compartiments | Voir [ Tutoriel 3](#84-build-a-latency-histogram) |
-| `FACET CASES (…)` | `FILTER` colonnes | Voir [ Tutoriel 3](#83-group-values-into-cases-with-filter) |
+| `histogram(duration, …)` | `FILTER` compartiments | Voir [&#x200B; Tutoriel 3](#84-build-a-latency-histogram) |
+| `FACET CASES (…)` | `FILTER` colonnes | Voir [&#x200B; Tutoriel 3](#83-group-values-into-cases-with-filter) |
 | `COMPARE WITH 1 week ago` | Non pris en charge. | Modifiez le sélecteur d’heure ou utilisez `SINCE … UNTIL …` via l’API |
 | `RLIKE` | `LIKE` / `IN` |                                                              |
 | Mathématiques dans l’agrégation `SELECT`/imbriquée | **Formule** widget |                                                              |
@@ -1194,7 +1194,7 @@ Chaque entité traitée enveloppe une mesure OpenTelemetry avec le filtre approp
 
 [↑ Haut de la page](#top)
 
-# Tutoriels
+&#x200B;# Tutoriels
 
 ## &#x200B;6. Tutoriel 1 : Vos premières requêtes
 
@@ -1828,7 +1828,7 @@ SELECT percentile(duration, 95) AS p95 FROM Transaction FACET host ORDER BY p95 
 
 [↑ Haut de la page](#top)
 
-# Exemples
+&#x200B;# Exemples
 
 ## &#x200B;10. Demander le guide pas à pas
 
@@ -3385,7 +3385,7 @@ SELECT count(*) AS calls, percentile(duration, 95) AS p95, count(*) FILTER (WHER
 
 [↑ Haut de la page](#top)
 
-# Fonctionner
+&#x200B;# Fonctionner
 
 ## 12. Performance
 
