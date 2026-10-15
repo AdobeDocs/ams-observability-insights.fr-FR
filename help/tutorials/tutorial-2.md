@@ -1,17 +1,15 @@
 ---
 title: 'Tutoriel 2 : Contrôler vos données'
 description: Découvrez comment filtrer, regrouper et contrôler les résultats des requêtes dans Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '361'
+source-wordcount: '337'
 ht-degree: 0%
 ---
 
 ## Tutoriel 2 : Contrôler vos données {#tutorial-2-control-your-data}
 
 Dans ce tutoriel, vous découvrirez les fonctions et les clauses qui transforment les décomptes bruts en réponses : décomptes distincts, dernières valeurs, pourcentages, centiles, caractères génériques, tri et regroupement multidimensionnel.
-
-**Dans ce tutoriel :** [7.1 uniqueCount](#71-count-distinct-values-with-uniquecount) · [7.2 au plus tard/au plus tôt](#72-find-the-latest-and-earliest-values) · [7.3 pourcentage](#73-calculate-percentages) · [7.4 percentile](#74-understand-latency-with-percentile) · [7.5 Libellés](#75-make-results-readable-with-labels) · [7.6 Caractères génériques et listes](#76-match-patterns-and-lists) · [7.7 Tri](#77-sort-and-rank-with-order-by) · [7.8 Facettes multiples](#78-group-by-several-attributes) · [7.9 Fenêtres passées](#79-look-at-a-past-window)
 
 ### Compter les valeurs distinctes avec `uniqueCount`
 
@@ -69,7 +67,7 @@ Les moyennes masquent les valeurs aberrantes. Les centiles montrent ce que la pl
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
->[!TIP]
+> **Conseil**
 >
 > p50, p95 et p99 de `Transaction.duration` sont servis à partir de rollups sur de longues fenêtres, de sorte qu&#39;ils restent rapides pour des vues hebdomadaires.
 
@@ -123,7 +121,7 @@ Ou les services les moins utilisés en premier :
 SELECT count(*) AS requests FROM Transaction FACET service ORDER BY requests ASC LIMIT 10
 ```
 
->[!TIP]
+> **Conseil**
 >
 > Il n&#39;y a pas de `HAVING`. Pour rechercher uniquement les opérations « occupées », classez par `requests` et conservez le N premiers ou ajoutez une `WHERE` qui supprime le bruit (par exemple `WHERE http.method != 'OPTIONS'`).
 

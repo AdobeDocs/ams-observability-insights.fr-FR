@@ -1,9 +1,9 @@
 ---
 title: Prise en main de SQL
 description: Découvrez comment interroger la télémétrie Observability Insights à l’aide de SQL.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
 workflow-type: tm+mt
-source-wordcount: '684'
+source-wordcount: '687'
 ht-degree: 1%
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 | **S’applique à** | Interface utilisateur d’Insights → **Explorer** et **Tableaux de bord** (tableaux de bord personnalisés) |
 | **Audience** | Ingénieurs, ingénieurs et utilisatrices et utilisateurs et utilisatrices expérimentés qui connaissent SQL |
 
->[!TIP]
+> **Conseil**
 >
 > Chaque bloc de code marqué `sql` est une requête SQL que vous pouvez coller directement dans **Explorer → SQL** ou dans **Tableaux de bord → Ajouter un widget → SQL**.
 
@@ -42,13 +42,13 @@ Utilisez SQL pour :
 
 SQL prend en charge les requêtes **événement**, qui renvoient des lignes de requête individuelles, et les requêtes **agrégées**, qui renvoient des totaux, des centiles, des taux, des répartitions et des séries temporelles.
 
->[!TIP]
+> **Conseil**
 >
 > Les modèles de **Tableaux de bord → Créer un tableau de bord** sont entièrement créés à partir de SQL. Ouvrez n’importe quel widget de modèle avec l’icône en forme de crayon pour afficher sa requête et en tirer des enseignements.
 
 ### Ce que vous pouvez interroger
 
-SQL peut interroger quatre familles de données. La liste complète se trouve dans le [dictionnaire de données](#data-dictionary).
+SQL peut interroger quatre familles de données. La liste complète se trouve dans le [dictionnaire de données](/help/references/data-dictionary.md).
 
 | Famille | Entités | Questions courantes |
 | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------------------------------------------------- |
@@ -57,7 +57,7 @@ SQL peut interroger quatre familles de données. La liste complète se trouve da
 | **Mesures génériques** | `MetricGauge`, `MetricSum` | Toute mesure OpenTelemetry par nom, découverte de mesures |
 | **Composition d’étendue préagrégée** | `SpanBreakdown` | Les opérations enfants qui constituent une transaction |
 
->[!NOTE]
+> **Remarque**
 >
 > Les journaux, les définitions d’alerte et les relations d’inventaire ne sont pas disponibles.
 
@@ -97,7 +97,7 @@ FROM    Entity
 Les règles SQL sont les suivantes :
 
 | Règle | Détails |
-| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ---------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Clauses obligatoires** | `SELECT` et `FROM` sont requis. Toutes les autres clauses sont facultatives. Vous pouvez commencer par : `FROM Transaction SELECT count(*)` est également valide. |
 | **Ordre des clauses** | Les clauses après `FROM` peuvent apparaître dans n’importe quel ordre. Chaque clause ne peut apparaître qu&#39;une seule fois. |
 | **Taille de la requête** | Une requête doit faire 4 Ko ou moins. |
@@ -106,5 +106,5 @@ Les règles SQL sont les suivantes :
 | **Littéraux** | Chaînes, nombres (y compris négatifs et décimaux), `TRUE`, `FALSE`, `NULL`. |
 | **Noms d’attributs** | Les noms peuvent contenir des lettres, des chiffres, des `_` et des `.` (par exemple, `http.statusCode`). Pas besoin de backticks. |
 | **Agrégats et attributs** | Une requête sélectionne des attributs bruts (une liste d’événements) ou des agrégats, jamais les deux. Pour regrouper, utilisez `FACET`. |
-| **Période** | La valeur par défaut est la dernière heure. La durée maximale est de 31 jours. Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure** définit la fenêtre (voir [Fenêtre temporelle](#time-window-precedence)). |
-| **Non pris en charge** | Points-virgules, commentaires, sous-requêtes, jointures, `SELECT *`, correspondance entre les attributs dans `SELECT`, `HAVING`, `COMPARE WITH`. Voir [Ce que SQL ne fait pas](#what-sql-doesnt-do) pour d’autres solutions. |
+| **Période** | La valeur par défaut est la dernière heure. La durée maximale est de 31 jours. Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure** définit la fenêtre (voir [Fenêtre temporelle](how-to-query-sql.md#time-window-precedence)). |
+| **Non pris en charge** | Points-virgules, commentaires, sous-requêtes, jointures, `SELECT *`, correspondance entre les attributs dans `SELECT`, `HAVING`, `COMPARE WITH`. Voir [Ce que SQL ne fait pas](sql-query-examples.md#what-sql-doesnt-do) pour d’autres solutions. |

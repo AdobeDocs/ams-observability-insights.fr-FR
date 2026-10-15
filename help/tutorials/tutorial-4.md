@@ -1,17 +1,15 @@
 ---
 title: 'Tutoriel 4 : Fonctions avancées'
 description: Découvrez comment utiliser des fonctions SQL avancées pour analyser la télémétrie Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '507'
+source-wordcount: '483'
 ht-degree: 1%
 ---
 
 ## Tutoriel 4 : Fonctions avancées {#tutorial-4-advanced-functions}
 
 Ce tutoriel couvre les fonctions et les entités qui alimentent des investigations plus approfondies : la variabilité, la croissance, les recherches du « pire exemple », la part du total, la composition des transactions et les mesures arbitraires OpenTelemetry.
-
-**Dans ce tutoriel :** [9.1 stddev](#91-measure-consistency-with-stddev) · [9.2 dérivée](#92-spot-growth-with-derivative) · [9.3 Classée en dernier](#93-find-the-worst-example-with-ranked-latest) · [9.4 pourcentOfTotal](#94-find-where-time-goes-with-percentoftotal) · [9.5 SpanBreakdown](#95-break-down-transactions-with-spanbreakdown) · [9.6 N’importe quelle mesure](#96-discover-and-query-any-metric) · [9.7 Choisissez l’entité](#97-choose-the-right-trace-entity) · [9.8 Agrégation imbriquée](#98-work-around-nested-aggregation)
 
 ### Mesurer la cohérence avec les `stddev`
 
@@ -124,9 +122,9 @@ SELECT count(*) AS calls, percentage(*, WHERE status = 'Error') AS errorPct, per
 NRQL vous permet d’agréger un agrégat avec une sous-requête, par exemple « la moyenne des maximums par hôte ». SQL ne le fait pas. Voici les alternatives :
 
 | Objectif | Approche SQL |
-| --------------------------------------- | ---------------------------------------------------------- |
+| --------------------------------------- | -------------------------------------------------------------------- |
 | Valeur par groupe, puis classement des groupes | `FACET group` + `ORDER BY alias` + `LIMIT` |
-| Un ratio de deux agrégats | [Widget de formule](#86-combine-queries-with-formula-widgets) |
+| Un ratio de deux agrégats | [Widget de formule](tutorial-3.md#combine-queries-with-formula-widgets) |
 | Valeur par hôte, puis « pire hôte » | `FACET host ORDER BY alias DESC LIMIT 1` |
 | Moyenne par hôte dans le temps | `FACET host TIMESERIES AUTO` et lisez la série |
 

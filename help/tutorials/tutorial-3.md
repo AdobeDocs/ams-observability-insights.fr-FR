@@ -1,17 +1,15 @@
 ---
 title: 'Tutoriel 3 : Avancer dans votre tableau de bord'
 description: Créez des tableaux de bord avec des variables, des formules et plusieurs widgets dans Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
-source-wordcount: '902'
-ht-degree: 3%
+source-wordcount: '879'
+ht-degree: 4%
 ---
 
 ## Tutoriel 3 : Avancer dans votre tableau de bord {#tutorial-3-advance-your-dashboarding}
 
 Dans ce tutoriel, vous allez créer les composants d’un tableau de bord de niveau production : scores d’expérience utilisateur, taux de compteur, regroupement des cas, histogrammes, mosaïques d’indicateurs clés de performance avec seuils, sections, widgets de formule et variables.
-
-**Dans ce tutoriel :** [8.1 apdex](#81-score-user-experience-with-apdex) · [8.2 taux](#82-turn-counters-into-rates-with-rate) · [8.3 Cas](#83-group-values-into-cases-with-filter) · [8.4 Histogrammes](#84-build-a-latency-histogram) · [8.5 IPC tuiles et sections](#85-build-kpi-tiles-and-sections) · [8.6 Formules](#86-combine-queries-with-formula-widgets) · [8.7 Variables](#87-make-dashboards-reusable-with-variables) · [8.8 Assemblez-le](#88-put-it-together)
 
 ### Noter l’expérience utilisateur avec `apdex`
 
@@ -29,7 +27,7 @@ SELECT apdex(duration, 500) AS apdex FROM Transaction FACET service TIMESERIES A
 
 Insérez-le dans un widget **Nombre** avec des seuils `0 → Red`, `0.7 → Amber` et `0.85 → Green`. Le groupe qui correspond le mieux gagne, donc les scores bas restent rouges.
 
-### 8.2 Transformer les compteurs en taux avec `rate`
+### Transformer les compteurs en taux avec `rate`
 
 Les entités de compteur (✔ dans le [dictionnaire de données](#53-curated-metric-entities)) stockent des totaux toujours croissants. `rate(value)` les convertit en valeurs par seconde. Elle a besoin d’`TIMESERIES` et doit être le seul agrégat :
 
@@ -41,7 +39,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
->[!WARNING]
+> **Avertissement**
 >
 > Toujours facettiser les `rate()` par `host` (et par `device` pour les disques) ou les filtrer sur un hôte. Sans cela, les lectures des différents hôtes se mélangent et le résultat est dénué de sens.
 
@@ -192,7 +190,7 @@ SELECT count(*) FROM Transaction FACET service LIMIT 200
 
 Les options sont actualisées lorsque le client ou le sélecteur d’heure change et sont triées par ordre alphabétique. Lorsque la sélection en cours n’est plus valide, la première valeur (sélection unique) ou toutes les valeurs (sélection multiple) sont automatiquement sélectionnées. La requête d’une variable ne peut pas référencer d’autres variables.
 
->[!WARNING]
+> **Avertissement**
 >
 > **Limitation actuelle de build.** La substitution se produit dans la grille du tableau de bord, mais l’aperçu **Ajouter un widget** et le contrôle d’enregistrement côté serveur **server-side save check** reçoivent le jeton de `{{name}}` brut et le rejettent avec `Unexpected character '{'`. En pratique :
 >
@@ -203,4 +201,4 @@ Les options sont actualisées lorsque le client ou le sélecteur d’heure chang
 
 ### Assemblez-le
 
-Chaque bloc de création est désormais utilisé dans les [plans directeurs de tableau de bord](#dashboard-blueprints) : mosaïques d’indicateurs clés de performance avec seuils, sections, centiles, index, taux, colonnes de cas, histogrammes, formules et variables. Les plans directeurs montrent comment les combiner dans des tableaux de bord complets de signal d’or, de tri d’erreurs, d’AEM, d’infrastructure et JVM.
+Chaque bloc de création est désormais utilisé dans les [plans directeurs de tableau de bord](../examples/dashboard-blueprint.md) : mosaïques d’indicateurs clés de performance avec seuils, sections, centiles, index, taux, colonnes de cas, histogrammes, formules et variables. Les plans directeurs montrent comment les combiner dans des tableaux de bord complets de signal d’or, de tri d’erreurs, d’AEM, d’infrastructure et JVM.

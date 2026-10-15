@@ -1,7 +1,7 @@
 ---
 title: Dictionnaire de données
 description: Référencez les entités et les attributs disponibles pour les requêtes SQL Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
 workflow-type: tm+mt
 source-wordcount: '598'
 ht-degree: 21%
@@ -14,8 +14,8 @@ Il s’agit de chaque entité et attribut que vous pouvez interroger. Le catalog
 ### Trace des entités
 
 | Entité | Contient | Portée fixe | Cumuls |
-| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------ |
-| `Transaction` | Requêtes de serveur entrantes | `kind = Server` | 1m / 5m / 1h ([Performance](#performance)) |
+| ------------- | --------------------------------------------------------- | ---------------------------- | ------------------------------------------------------- |
+| `Transaction` | Requêtes de serveur entrantes | `kind = Server` | 1m / 5m / 1h ([Performance](../operate/performance.md)) |
 | `AppRequest` | Requêtes **et** message client entrantes du serveur | `kind IN (Server, Consumer)` | — |
 | `Span` | Chaque étendue (serveur, client, producteur, consommateur, interne) | — | — |
 
