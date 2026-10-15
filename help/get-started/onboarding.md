@@ -12,9 +12,9 @@ feature_v2:
 role_v2:
   - id: c66ffd68-0f65-42bb-aa23-b4020f12e0bd
     internal-label: Admin
-source-git-commit: e0cc17c9d725cad021ba99da4332bca176eae6db
+source-git-commit: d8c86bf4873a9eef6ce9bbcca5a545aa4e862e5f
 workflow-type: tm+mt
-source-wordcount: '533'
+source-wordcount: '518'
 ht-degree: 0%
 ---
 
@@ -65,6 +65,6 @@ La documentation est organisée en quatre domaines. Utilisez les descriptions ci
 
 **Commencer** — Cette section. Couvre l’accès, le provisionnement des comptes, la portée de la surveillance et la conservation des données.
 
-**[Utiliser les informations d’observabilité](../use-observability-insights.md)** — Conseils axés sur les tâches pour les enquêtes quotidiennes. Utilisez [Applications](../applications.md) lorsque le symptôme est visible par l’application : pages lentes, pics d’erreur ou transactions instables. Utilisez [Hôtes](../hosts.md) lorsque vous devez déterminer si la pression des ressources au niveau de l’hôte (CPU, mémoire, disque ou réseau) explique ce que vous voyez dans les applications. Des flux d’enquête détaillés sont disponibles dans [Enquête sur les problèmes d’application](../use-cases/investigate-application-issues.md) et [Enquête sur les problèmes d’infrastructure](../use-cases/investigate-infrastructure-issues.md).
+**[Utiliser les informations d’observabilité](../use-observability-insights.md)** — Conseils axés sur les tâches pour les enquêtes quotidiennes. Utilisez [Applications](../applications.md) lorsque le symptôme est visible par l’application : pages lentes, pics d’erreur ou transactions instables. Utilisez [Hôtes](../hosts.md) lorsque vous devez déterminer si la pression des ressources au niveau de l’hôte (CPU, mémoire, disque ou réseau) explique ce que vous voyez dans les applications.
 
 **[Questions fréquentes](../troubleshooting/common-questions.md)** — Questions courantes et points d&#39;entrée orientés support pour les cas où vous ne savez pas par où commencer ou avez besoin de réponses rapides lors d&#39;un incident actif.

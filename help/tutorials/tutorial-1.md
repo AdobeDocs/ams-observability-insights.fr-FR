@@ -1,17 +1,15 @@
 ---
 title: 'Tutoriel 1 : Vos premières requêtes'
 description: Écrivez vos premières requêtes SQL par rapport à la télémétrie Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 52cc24792c47727700428be58b5bbb2a5c7223d2
 workflow-type: tm+mt
-source-wordcount: '576'
+source-wordcount: '552'
 ht-degree: 0%
 ---
 
 ## Tutoriel 1 : Vos premières requêtes {#tutorial-1-your-first-queries}
 
 Bienvenue dans SQL. Dans ce tutoriel, vous allez écrire vos premières requêtes, contrôler la fenêtre temporelle, tracer des tendances, filtrer et regrouper les résultats et placer votre premier graphique sur un tableau de bord. Chaque étape s’appuie sur la précédente.
-
-**Dans ce tutoriel :** [Avant de commencer](#before-you-begin) · [6.1 Événements de requête](#61-query-events-with-select-from-and-limit) · [6.2 Agrégat](#62-aggregate-your-data) · [6.3 Plusieurs agrégats](#63-return-several-aggregates-at-once) · [6.4 Fenêtre temporelle](#64-set-the-time-window) · [6.5 SÉRIES TEMPORELLES](#65-plot-trends-with-timeseries) · [6.6 WHERE](#66-filter-with-where) · [6.7 FACET](#67-group-with-facet) · [6.8 Enregistrer dans un tableau de bord](#68-save-your-query-to-a-dashboard)
 
 ### Avant de commencer
 
@@ -35,7 +33,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Les lignes sont triées en fonction de la première colonne, par ordre décroissant. Ainsi, si vous placez `timestamp` en premier, vous obtenez les requêtes les plus récentes en haut.
 
->[!NOTE]
+> **Remarque**
 >
 > SQL n&#39;a pas de `SELECT *`. Les attributs de liste permettent de conserver des résultats petits et lisibles. Le [dictionnaire de données](#data-dictionary) et la saisie semi-automatique dans l’éditeur, affichent les éléments disponibles.
 
@@ -69,7 +67,7 @@ Séparez les agrégats par des virgules et attribuez à chacun un nom `AS` :
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
->[!TIP]
+> **Conseil**
 >
 > Les alias deviennent les en-têtes de colonne et les libellés de légende, et ils sont ce que vous référencez dans `ORDER BY`. Prenez l’habitude de nommer chaque agrégat.
 
@@ -89,7 +87,7 @@ SELECT count(*) AS requests FROM Transaction SINCE 2 days ago UNTIL 1 day ago
 
 Les unités peuvent être `second`, `minute`, `hour`, `day` ou `week`. La fenêtre ne peut pas excéder 31 jours.
 
->[!IMPORTANT]
+> **Important**
 >
 > Dans **Explorer** et dans **tableaux de bord**, le **sélecteur d’heure** situé en haut de la page contrôle la fenêtre et remplace `SINCE`/`UNTIL`. Pour consulter une autre période, modifiez le sélecteur. Pour cette raison, le reste de ce guide `SINCE` exclut des requêtes de tableau de bord.
 
@@ -127,7 +125,7 @@ Utilisez `LIKE` avec `%` pour les correspondances partielles :
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
->[!NOTE]
+> **Remarque**
 >
 > Les valeurs de chaîne respectent la casse et utilisent des guillemets simples : `'Error'`, pas `"Error"` ni `'error'`. Remplacez `checkout` par un service de votre client. L’étape suivante indique comment les répertorier.
 

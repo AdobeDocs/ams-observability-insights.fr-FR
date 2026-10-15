@@ -1,9 +1,9 @@
 ---
 title: Exemples de requêtes SQL
 description: Explorez des exemples de requête SQL pour la télémétrie Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 4ad45ae5cbb2a7b348fdad1cd2681a72be12f5eb
 workflow-type: tm+mt
-source-wordcount: '306'
+source-wordcount: '311'
 ht-degree: 10%
 ---
 
@@ -22,10 +22,9 @@ FROM Transaction SELECT percentile(duration, 95) AS p95 FACET service TIMESERIES
 
 Cela génère une ligne par service sur un graphique linéaire, avec les 10 services les plus occupés affichés par défaut.
 
-Cliquez sur chaque exemple ci-dessous pour le développer.
+### Requête de base des requêtes entrantes
 
-<details>
-<summary><strong>Requête de base des requêtes entrantes</strong></summary>
++++Afficher la requête
 
 Temps de réponse moyen, en millisecondes, de toutes les requêtes entrantes :
 
@@ -33,10 +32,11 @@ Temps de réponse moyen, en millisecondes, de toutes les requêtes entrantes :
 SELECT average(duration) FROM Transaction
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Noms d’attributs contenant des points</strong></summary>
+### Noms d’attributs contenant des points
+
++++Afficher la requête
 
 Les noms en pointillés n’ont pas besoin de guillemets :
 
@@ -44,10 +44,11 @@ Les noms en pointillés n’ont pas besoin de guillemets :
 SELECT count(*) FROM Transaction WHERE http.statusCode >= 500 FACET http.route
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Requête renvoyant plusieurs colonnes</strong></summary>
+### Requête renvoyant plusieurs colonnes
+
++++Afficher la requête
 
 Plusieurs agrégats dans une requête deviennent des colonnes dans un tableau :
 
@@ -55,10 +56,11 @@ Plusieurs agrégats dans une requête deviennent des colonnes dans un tableau :
 SELECT count(*) AS requests, average(duration) AS avgMs, percentile(duration, 95) AS p95, max(duration) AS maxMs FROM Transaction FACET service
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Agrégats conditionnels en une seule passe</strong></summary>
+### Agrégats conditionnels en une seule passe
+
++++Afficher la requête
 
 Total, erreurs et 5xx côte à côte :
 
@@ -66,10 +68,11 @@ Total, erreurs et 5xx côte à côte :
 SELECT count(*) AS total, count(*) FILTER (WHERE status = 'Error') AS errors, count(*) FILTER (WHERE http.statusCode >= 500) AS http5xx FROM Transaction FACET service
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Requête d’une mesure sélectionnée</strong></summary>
+### Requête d’une mesure sélectionnée
+
++++Afficher la requête
 
 CPU moyen par hôte au fil du temps :
 
@@ -77,10 +80,11 @@ CPU moyen par hôte au fil du temps :
 SELECT average(value) AS cpu FROM CpuUtilization FACET host TIMESERIES AUTO
 ```
 
-</details>
++++
 
-<details>
-<summary><strong>Requête d’une mesure OpenTelemetry par nom</strong></summary>
+### Requête d’une mesure OpenTelemetry par nom
+
++++Afficher la requête
 
 Utilisez `MetricGauge` / `MetricSum` pour les mesures sans entité curée :
 
@@ -88,7 +92,7 @@ Utilisez `MetricGauge` / `MetricSum` pour les mesures sans entité curée :
 SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used' FACET host, pool
 ```
 
-</details>
++++
 
 <a id="what-sql-doesnt-do"></a>
 
@@ -97,15 +101,15 @@ SELECT latest(value) AS bytesUsed FROM MetricSum WHERE metric = 'jvm.memory.used
 SQL est délibérément petit. Cela permet de garder les requêtes sécurisées, rapides et isolées par le client ou la cliente. Lorsque vous avez besoin de l’une de ces fonctionnalités, utilisez l’alternative .
 
 | Fonction | Statut | Alternative |
-| ------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------ |
+| ------------------------------------------- | ------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | `SELECT *` | Non pris en charge. | Répertoriez les attributs souhaités : `SELECT timestamp, name, duration, traceId …`. |
 | Mélange d’attributs bruts et d’agrégats | Non pris en charge. | Utilisez `FACET attr` ou `latest(attr)` / `earliest(attr)`. |
 | Mathématiques en `SELECT` (`a - b`, `count(*) / 60`) | Non pris en charge. | **Formule** widget (tableaux de bord). |
 | Jointures et sous-requêtes | Non pris en charge. | **Formule** widget ou deux widgets côte à côte. |
 | `HAVING` | Non pris en charge. | `ORDER BY alias` + `LIMIT`. |
 | `COMPARE WITH` | Non pris en charge. | Modifiez le sélecteur d’heure ou placez deux widgets sur des onglets différents. |
-| `FACET CASES` | Non pris en charge. | Une colonne `count(*) FILTER (WHERE …)` par cas (voir [Tutoriel 3](#83-group-values-into-cases-with-filter)). |
-| `histogram()` | Non pris en charge. | Colonnes `FILTER` regroupées (voir [tutoriel 3](#84-build-a-latency-histogram)). |
+| `FACET CASES` | Non pris en charge. | Une colonne `count(*) FILTER (WHERE …)` par cas (voir [Tutoriel 3](../../tutorials/tutorial-3.md#group-values-into-cases-with-filter)). |
+| `histogram()` | Non pris en charge. | Colonnes `FILTER` regroupées (voir [tutoriel 3](../../tutorials/tutorial-3.md#build-a-latency-histogram)). |
 | `uniques()` / `keyset()` | Non pris en charge. | `FACET attr LIMIT n` répertorie des valeurs distinctes. Les requêtes de découverte répertorient les mesures et les attributs renseignés. |
 | `RLIKE` (regex) | Non pris en charge. | `LIKE` / `NOT LIKE` avec des caractères génériques `%` et `_`, ou `IN (…)`. |
 | Commentaires (`--`, `//`, `/* */`) | Non pris en charge. | Insérez des notes dans le titre du widget ou dans un widget **Texte**. |

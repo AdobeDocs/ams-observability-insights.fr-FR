@@ -1,9 +1,9 @@
 ---
 title: Création d’un tableau de bord
 description: Découvrez comment créer, configurer, enregistrer et partager des tableaux de bord Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 2e851e1a3d9f8fbdb220ecd0d37fba0f6b0188df
 workflow-type: tm+mt
-source-wordcount: '1129'
+source-wordcount: '1134'
 ht-degree: 2%
 ---
 
@@ -39,9 +39,9 @@ ht-degree: 2%
 | **Grille** | 12 colonnes. Faites glisser les widgets près de la poignée, redimensionnez-les depuis le coin (minimum 2×2). |
 | **En-tête du widget** (au survol) | Télécharger CSV, Télécharger PNG, Modifier, Dupliquer, Supprimer, faire glisser la poignée |
 
->[!IMPORTANT]
+> **Important**
 >
-> **L’enregistrement est explicite.** Les modifications de disposition, les nouveaux widgets, onglets et variables restent dans votre navigateur jusqu’à ce que vous cliquiez sur **Enregistrer**. Le bouton indique _Enregistrement... → enregistré_ ou _Échec de l’enregistrement_ (voir [Dépannage](#troubleshooting)).
+> **L’enregistrement est explicite.** Les modifications de disposition, les nouveaux widgets, onglets et variables restent dans votre navigateur jusqu’à ce que vous cliquiez sur **Enregistrer**. Le bouton indique _Enregistrement... → enregistré_ ou _Échec de l’enregistrement_ (voir [Dépannage](../operate/troubleshooting.md)).
 
 ### Étape 4 : ajouter un widget
 
@@ -64,7 +64,7 @@ Cliquez sur **Ajouter un widget**. La boîte de dialogue comporte trois modes : 
 3. Utilisez le panneau **Guide de requête** pour parcourir les entités, les attributs et les exemples.
 4. Cliquez sur **Exécuter la requête**. Vous verrez _`<Entity>`requête est valide_ un aperçu en direct et un résumé (`N rows · N time points · N groups`). Un avertissement _série clairsemée_ s’affiche lorsqu’il y a moins de trois points temporels.
 
->[!TIP]
+> **Conseil**
 >
 > Le Builder couvre les requêtes les plus courantes. Basculez vers SQL pour `apdex`, `percentage`, `rate`, `FILTER`, plusieurs agrégats, `OR`, `IN`, plusieurs facettes ou `ORDER BY`.
 
@@ -101,7 +101,7 @@ Lorsque la ligne unique d’un widget Nombre contient une valeur de texte (par e
 - **Remarque** : texte brut (jusqu’à 4 000 caractères, lignes vides conservées). Utilisez-le pour les liens de runbook, les propriétaires et les définitions de SLO. Les `{{variables}}` sont rendues.
 - **En-tête de section** : cochez la case _En-tête de section_. Il s’étend sur toute la largeur et son chevron réduit chaque widget situé en dessous, jusqu’à l’en-tête de section suivant. Utilisez-le pour des regroupements tels que **PUBLICATION**, **AUTEUR** et **DISPATCHER**.
 
->[!TIP]
+> **Conseil**
 >
 > Les titres des widgets se terminant par `- PUBLISH` ou `- AUTHOR` reçoivent une indice de couleur subtil, ce qui facilite la numérisation des tableaux de bord AEM par niveau.
 
@@ -116,15 +116,15 @@ Lorsque la ligne unique d’un widget Nombre contient une valeur de texte (par e
 
 ## Variables
 
-Les variables permettent à un tableau de bord de servir de nombreux contextes, tels qu’un service, un environnement ou un seuil à la fois. Ils sont abordés en détail dans le [tutoriel 3](#87-make-dashboards-reusable-with-variables).
+Les variables permettent à un tableau de bord de servir de nombreux contextes, tels qu’un service, un environnement ou un seuil à la fois. Ils sont abordés en détail dans le [tutoriel 3](../tutorials/tutorial-3.md#make-dashboards-reusable-with-variables).
 
->[!WARNING]
+> **Avertissement**
 >
 > **Limites connues dans la version actuelle :** `{{variables}}` fonctionner dans les widgets **titres** et **texte**. Dans le widget **SQL**, le rendu est effectué sur le tableau de bord, mais la prévisualisation **Ajouter un widget** et la prévisualisation **Enregistrer** côté serveur vérifient et rejettent le jeton `{{name}}` brut avec `Unexpected character '{'`. Tant que ce problème n’est pas résolu, utilisez des valeurs littérales dans les requêtes de widget et utilisez **Dupliquer** pour créer des variantes.
 
 ## Widgets de formule
 
-Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [&#x200B; Tutoriel 3](#86-combine-queries-with-formula-widgets).
+Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, par exemple `(errors / total) * 100`. Utilisez-en une lorsqu’un indicateur de performance clé nécessite plusieurs requêtes, par exemple un ratio, une marge, une somme de taux ou un taux de combustion. Voir [&#x200B; Tutoriel 3](../tutorials/tutorial-3.md#combine-queries-with-formula-widgets).
 
 ## Partager, exporter et importer
 
@@ -135,9 +135,9 @@ Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, 
 | **Importer** | Charge une exportation JSON **dans le tableau de bord ouvert** en remplaçant ses onglets et variables. Cliquez ensuite sur **Enregistrer**. Conseil : créez d’abord un tableau de bord vide, puis importez-le. |
 | **CSV/PNG** | Téléchargements par widget à partir de l’en-tête du widget. |
 
->[!TIP]
+> **Conseil**
 >
-> L’exportation et l’importation vous permettent de contrôler les versions des tableaux de bord dans Git et de promouvoir un tableau de bord d’un client à un autre. Le format du fichier est décrit dans l’[Annexe](#142-export-file-format).
+> L’exportation et l’importation vous permettent de contrôler les versions des tableaux de bord dans Git et de promouvoir un tableau de bord d’un client à un autre. Le format du fichier est décrit dans l’[Annexe](../operate/appendix.md).
 
 ## Conseils pour optimiser les performances des tableaux de bord et des graphiques
 
@@ -146,4 +146,4 @@ Une formule combine de 2 à 6 requêtes SQL nommées de manière arithmétique, 
 - **Toujours `LIMIT` les requêtes à facettes**, en particulier sur les attributs à cardinalité élevée tels que `urlPath`, `traceId` et `jcr.path`.
 - **Filtrez tôt** sur les attributs de faible cardinalité (`service`, `kind`, `status`).
 - **Préférez les`TIMESERIES AUTO`** aux petits compartiments fixes et évitez les `TIMESERIES MAX` sauf pendant quelques minutes.
-- **Concevoir des tendances à long terme pour les cumuls.** Voir [Performances](#performance).
+- **Concevoir des tendances à long terme pour les cumuls.** Voir [Performances](../operate/performance.md).
