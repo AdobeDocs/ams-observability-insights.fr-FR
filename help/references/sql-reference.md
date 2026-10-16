@@ -207,7 +207,7 @@ SELECT count(*) FROM Transaction SINCE 6 hours ago
 
 >[!IMPORTANT]
 >
-> Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure) remplace** `SINCE` et `UNTIL`. Voir [ Priorité de la fenêtre temporelle ](#time-window-precedence).
+> Dans les tableaux de bord et dans Explorer, le **sélecteur d’heure) remplace** `SINCE` et `UNTIL`. Voir [&#x200B; Priorité de la fenêtre temporelle &#x200B;](#time-window-precedence).
 
 +++
 
@@ -335,7 +335,7 @@ SELECT average(duration) AS avgMs FROM Transaction FACET service TIMESERIES AUTO
 +++Afficher les détails
 
 - `count(*)` compte les lignes.
-- `count(attribute)` compte les lignes dont l&#39;attribut n&#39;est **pas NULL**. Pour les attributs de chaîne, les valeurs manquantes sont vides (`''`) plutôt que NULL. Elles sont donc toujours comptabilisées (voir [ Gestion des types ](#46-type-handling-blank-vs-null)).
+- `count(attribute)` compte les lignes dont l&#39;attribut n&#39;est **pas NULL**. Pour les attributs de chaîne, les valeurs manquantes sont vides (`''`) plutôt que NULL. Elles sont donc toujours comptabilisées (voir [&#x200B; Gestion des types &#x200B;](#46-type-handling-blank-vs-null)).
 
 ```sql
 SELECT count(*) AS requests, count(http.statusCode) AS withStatusCode FROM Transaction
@@ -591,8 +591,8 @@ Si vous connaissez la requête existante, voici le détail de la migration
 | `derivative(x, 1 minute)` | `derivative(x)` + `TIMESERIES` | Par seconde |
 | `uniques(x)` | `count(*) … FACET x LIMIT n` |                                                                                  |
 | `keyset()` / `SHOW EVENT TYPES` | [Requêtes de découverte](../examples/query-cookbook.md#data-discovery) ou le panneau du guide de requête |                                                                                  |
-| `histogram(duration, …)` | `FILTER` compartiments | Voir [ Tutoriel 3](../tutorials/tutorial-3.md#build-a-latency-histogram) |
-| `FACET CASES (…)` | `FILTER` colonnes | Voir [ Tutoriel 3](../tutorials/tutorial-3.md#group-values-into-cases-with-filter) |
+| `histogram(duration, …)` | `FILTER` compartiments | Voir [&#x200B; Tutoriel 3](../tutorials/tutorial-3.md#build-a-latency-histogram) |
+| `FACET CASES (…)` | `FILTER` colonnes | Voir [&#x200B; Tutoriel 3](../tutorials/tutorial-3.md#group-values-into-cases-with-filter) |
 | `COMPARE WITH 1 week ago` | Non pris en charge. | Modifiez le sélecteur d’heure ou utilisez `SINCE … UNTIL …` via l’API |
 | `RLIKE` | `LIKE` / `IN` |                                                                                  |
 | Mathématiques dans l’agrégation `SELECT`/imbriquée | **Formule** widget |                                                                                  |
