@@ -1,17 +1,15 @@
 ---
 title: Demander le guide pas à pas
 description: Utilisez les recettes de requête SQL pour étudier la télémétrie des applications et des infrastructures dans Observability Insights.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: ae94813d8db77f7d5795add161a7fbfd7427c050
 workflow-type: tm+mt
-source-wordcount: '580'
+source-wordcount: '554'
 ht-degree: 0%
 ---
 
 ## Demander le guide pas à pas {#query-cookbook}
 
 Le guide pas à pas est une bibliothèque de requêtes prêtes à l’emploi, regroupées par sujet. Chaque requête est précédée du type de graphique qui lui convient le mieux, en **gras**. Les clauses de temps sont ignorées, car le sélecteur de temps contrôle la fenêtre.
-
-**Dans ce document :** [10.1 Découverte de données](#101-data-discovery) · [10.2 Débit](#102-throughput) · [10.3 Latence](#103-latency) · [10.4 Erreurs](#104-errors) · [10.5 Apdex](#105-apdex--user-experience) · [10.6 Services et hôtes](#106-services-hosts--instances) · [10.7 Dépendances](#107-downstream-dependencies) · [10.8 AEM](#108-aem-adobe-experience-manager) · [10.9 Infrastructure](#109-infrastructure) · [10.10 JVM](#1010-jvm--runtime)
 
 >[!TIP]
 >

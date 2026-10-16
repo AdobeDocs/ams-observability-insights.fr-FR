@@ -1,9 +1,9 @@
 ---
 title: Requête avec SQL
 description: Découvrez comment écrire et exécuter des requêtes SQL dans Observability Insights.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '555'
 ht-degree: 0%
 ---
 
@@ -15,7 +15,7 @@ Avant d’utiliser un outil, il est utile de savoir comment il fonctionne. Ce do
 
 La meilleure façon d’utiliser SQL est d’ouvrir **Explorer** et de l’essayer avec vos propres données.
 
-> **Conseil**
+>[!TIP]
 >
 > SQL est en lecture seule. Il ne peut pas modifier ni supprimer des données, et chaque requête est limitée à votre client.
 
@@ -43,7 +43,7 @@ Cela comptabilise les requêtes par service, ce qui vous indique quels services 
 
 > **Important**
 >
-> **Découvrir avant de créer.** La disponibilité des attributs dépend de la manière dont chaque service est instrumenté. Exécutez d’abord les [requêtes de découverte](#101-data-discovery) sur un nouveau client pour voir quels services, hôtes, attributs et mesures contiennent réellement des données.
+> **Découvrir avant de créer.** La disponibilité des attributs dépend de la manière dont chaque service est instrumenté. Exécutez d’abord les [requêtes de découverte](../../examples/query-cookbook.md#data-discovery) sur un nouveau client pour voir quels services, hôtes, attributs et mesures contiennent réellement des données.
 
 ### Exécution d’une requête
 
@@ -92,6 +92,6 @@ Chaque requête renvoie l&#39;une des quatre formes. La forme décide quels grap
 | **Explorer** | Sélecteur d’heure global. Les `SINCE`/`UNTIL` sont ignorés lorsqu’une plage de sélecteur est active. |
 | **API sans plage explicite** | `SINCE`/`UNTIL` dans la requête, par défaut la dernière heure. |
 
-> **Remarque**
+>[!NOTE]
 >
 > Étant donné que le sélecteur gagne dans les tableaux de bord et dans Explorer, ce guide ne prend généralement pas en `SINCE` les requêtes des tableaux de bord. Il convient toujours de définir un sélecteur de l’heure pour les requêtes.

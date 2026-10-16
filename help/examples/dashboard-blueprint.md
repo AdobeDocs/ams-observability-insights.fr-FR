@@ -1,28 +1,15 @@
 ---
 title: Plans directeurs de tableaux de bord
 description: Créez des tableaux de bord Observability Insights à l’aide de plans directeurs pour la surveillance des applications et des infrastructures.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 94e108d029b04bf4f04aec3fb8b949705c4005e1
 workflow-type: tm+mt
-source-wordcount: '1324'
+source-wordcount: '1196'
 ht-degree: 1%
 ---
 
 ## Plans directeurs de tableaux de bord {#dashboard-blueprints}
 
 Chaque plan directeur est un tableau de bord complet et complexe. Il répertorie l’objectif, la disposition des onglets et des sections, ainsi que chaque widget avec son type de graphique, son unité, ses seuils, sa taille et sa requête. Les tailles sont `width×height` sur la grille de 12 colonnes. Créez chacune d’elles de haut en bas, puis faites-les glisser pour les ajuster.
-
-| Blueprint | Audience | Tons clairs |
-| ------------------------------------------------------------------------------------ | --------------------- | ---------------------------------------------------------------------------------- |
-| [11.1 Golden Signals / SLO](#111-golden-signals--slo-board) | SRE, sur appel | Mosaïques de KPI avec seuils, Apdex, pourcentage d’erreur, saturation. |
-| [11.2 Triage des erreurs](#112-error-triage-board) | De garde | Classes d’erreurs, zones réactives 5xx, requêtes ayant échoué avec des ID de suivi |
-| [11.3 Exploration détaillée de la latence](#113-latency-deep-dive-board) | Ingénieurs de performance | Percentiles, intervalles de latence, variabilité, composition des transactions, traces les plus lentes |
-| [11.4 Dépendances en aval](#114-downstream-dependencies-board) | Propriétaires des services | HTTP sortant, base de données, messagerie, RPC |
-| [11.5 AEM Auteur / Publication / Dispatcher](#115-aem-author--publish--dispatcher-board) | équipes AEM | Sections par niveau, Sling/JSP/JCR, chargement du Dispatcher |
-| [11.6 Capacité de l&#39;infrastructure](#116-infrastructure-capacity-board) | Plateforme/capacité | modes CPU, mémoire, disque, taux réseau, formules |
-| [11.7 Intégrité JVM](#117-jvm-health-board) | Équipes Java | Formules de % du tas, tas par hôte et pool, threads, JVM CPU |
-| [11,8 Mur exécutif/CNP](#118-executive--noc-wall-board) | CNO, direction | Mosaïques d’indicateurs de performance clés, formule de disponibilité, trafic par niveau, note de SLO |
-| [11,9 Ratios &amp; Headroom](#119-ratios--headroom-board-formula-showcase) | Tout le monde | Présentation du widget de formule |
-| [11.10 Service Explorer](#1110-service-explorer-variable-driven) | Chaque équipe | Piloté par des variables, réutilisable |
 
 **Légende du graphique :** **N** = Nombre, **L** = Ligne, **A** = Aire, **B** = Barre, **P** = Secteurs, **T** = Tableau.
 
@@ -644,7 +631,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · E/S réseau totale pour un hôte (formule)** — Widget de formule, L, `bytes/s`, 12×4. Les formules ne peuvent pas `FACET`, et `rate()` doivent être limitées à un hôte (voir [Entités de mesure traitées](#53-curated-metric-entities)), donc épinglez l’hôte — remplacez `web-publish-01` par un nom d’hôte réel de W5.
+**W20 · E/S réseau totale pour un hôte (formule)** — Widget de formule, L, `bytes/s`, 12×4. Les formules ne peuvent pas `FACET`, et `rate()` doivent être limitées à un hôte (voir [Entités de mesure traitées](../references/data-dictionary.md#curated-metric-entities)), donc épinglez l’hôte — remplacez `web-publish-01` par un nom d’hôte réel de W5.
 
 `netRx` de requête :
 
@@ -939,7 +926,7 @@ Formule :
 limit - used
 ```
 
-**W5 · Taux d’entrée/sortie réseau pour un hôte** — Formule, L (épingler l’hôte ; voir [Entités de mesure traitées](#53-curated-metric-entities))
+**W5 · Taux d’entrée/sortie réseau pour un hôte** — Formule, L (épingler l’hôte ; voir [Entités de mesure traitées](../references/data-dictionary.md#curated-metric-entities))
 
 `rx` de requête :
 
