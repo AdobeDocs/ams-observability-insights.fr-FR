@@ -1,9 +1,9 @@
 ---
 title: Prise en main de SQL
 description: Découvrez comment interroger la télémétrie Observability Insights à l’aide de SQL.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '687'
+source-wordcount: '684'
 ht-degree: 1%
 ---
 
@@ -16,7 +16,7 @@ ht-degree: 1%
 | **S’applique à** | Interface utilisateur d’Insights → **Explorer** et **Tableaux de bord** (tableaux de bord personnalisés) |
 | **Audience** | Ingénieurs, ingénieurs et utilisatrices et utilisateurs et utilisatrices expérimentés qui connaissent SQL |
 
-> **Conseil**
+>[!TIP]
 >
 > Chaque bloc de code marqué `sql` est une requête SQL que vous pouvez coller directement dans **Explorer → SQL** ou dans **Tableaux de bord → Ajouter un widget → SQL**.
 
@@ -42,7 +42,7 @@ Utilisez SQL pour :
 
 SQL prend en charge les requêtes **événement**, qui renvoient des lignes de requête individuelles, et les requêtes **agrégées**, qui renvoient des totaux, des centiles, des taux, des répartitions et des séries temporelles.
 
-> **Conseil**
+>[!TIP]
 >
 > Les modèles de **Tableaux de bord → Créer un tableau de bord** sont entièrement créés à partir de SQL. Ouvrez n’importe quel widget de modèle avec l’icône en forme de crayon pour afficher sa requête et en tirer des enseignements.
 
@@ -57,7 +57,7 @@ SQL peut interroger quatre familles de données. La liste complète se trouve da
 | **Mesures génériques** | `MetricGauge`, `MetricSum` | Toute mesure OpenTelemetry par nom, découverte de mesures |
 | **Composition d’étendue préagrégée** | `SpanBreakdown` | Les opérations enfants qui constituent une transaction |
 
-> **Remarque**
+>[!NOTE]
 >
 > Les journaux, les définitions d’alerte et les relations d’inventaire ne sont pas disponibles.
 

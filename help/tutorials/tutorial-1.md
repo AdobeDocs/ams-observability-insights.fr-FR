@@ -1,9 +1,9 @@
 ---
 title: 'Tutoriel 1 : Vos premières requêtes'
 description: Écrivez vos premières requêtes SQL par rapport à la télémétrie Observability Insights.
-source-git-commit: 52cc24792c47727700428be58b5bbb2a5c7223d2
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '549'
 ht-degree: 0%
 ---
 
@@ -33,7 +33,7 @@ SELECT timestamp, service, name, duration FROM Transaction LIMIT 10
 
 Les lignes sont triées en fonction de la première colonne, par ordre décroissant. Ainsi, si vous placez `timestamp` en premier, vous obtenez les requêtes les plus récentes en haut.
 
-> **Remarque**
+>[!NOTE]
 >
 > SQL n&#39;a pas de `SELECT *`. Les attributs de liste permettent de conserver des résultats petits et lisibles. Le [dictionnaire de données](#data-dictionary) et la saisie semi-automatique dans l’éditeur, affichent les éléments disponibles.
 
@@ -67,7 +67,7 @@ Séparez les agrégats par des virgules et attribuez à chacun un nom `AS` :
 SELECT count(*) AS requests, average(duration) AS avgMs, max(duration) AS maxMs FROM Transaction
 ```
 
-> **Conseil**
+>[!TIP]
 >
 > Les alias deviennent les en-têtes de colonne et les libellés de légende, et ils sont ce que vous référencez dans `ORDER BY`. Prenez l’habitude de nommer chaque agrégat.
 
@@ -125,7 +125,7 @@ Utilisez `LIKE` avec `%` pour les correspondances partielles :
 SELECT count(*) AS contentRequests FROM Transaction WHERE urlPath LIKE '/content/%'
 ```
 
-> **Remarque**
+>[!NOTE]
 >
 > Les valeurs de chaîne respectent la casse et utilisent des guillemets simples : `'Error'`, pas `"Error"` ni `'error'`. Remplacez `checkout` par un service de votre client. L’étape suivante indique comment les répertorier.
 

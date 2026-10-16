@@ -1,10 +1,10 @@
 ---
 title: 'Tutoriel 3 : Avancer dans votre tableau de bord'
 description: Créez des tableaux de bord avec des variables, des formules et plusieurs widgets dans Observability Insights.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '879'
-ht-degree: 4%
+source-wordcount: '878'
+ht-degree: 3%
 ---
 
 ## Tutoriel 3 : Avancer dans votre tableau de bord {#tutorial-3-advance-your-dashboarding}
@@ -39,7 +39,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS writeBytesPerSec FROM DiskWriteRate FACET host, device TIMESERIES AUTO LIMIT 10
 ```
 
-> **Avertissement**
+>[!WARNING]
 >
 > Toujours facettiser les `rate()` par `host` (et par `device` pour les disques) ou les filtrer sur un hôte. Sans cela, les lectures des différents hôtes se mélangent et le résultat est dénué de sens.
 

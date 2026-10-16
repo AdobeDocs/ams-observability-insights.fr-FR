@@ -1,9 +1,9 @@
 ---
 title: Requête avec SQL
 description: Découvrez comment écrire et exécuter des requêtes SQL dans Observability Insights.
-source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
+source-git-commit: 898e474e3ab7914f8de2df286c67ac046d3b22b0
 workflow-type: tm+mt
-source-wordcount: '557'
+source-wordcount: '555'
 ht-degree: 0%
 ---
 
@@ -15,7 +15,7 @@ Avant d’utiliser un outil, il est utile de savoir comment il fonctionne. Ce do
 
 La meilleure façon d’utiliser SQL est d’ouvrir **Explorer** et de l’essayer avec vos propres données.
 
-> **Conseil**
+>[!TIP]
 >
 > SQL est en lecture seule. Il ne peut pas modifier ni supprimer des données, et chaque requête est limitée à votre client.
 
@@ -92,6 +92,6 @@ Chaque requête renvoie l&#39;une des quatre formes. La forme décide quels grap
 | **Explorer** | Sélecteur d’heure global. Les `SINCE`/`UNTIL` sont ignorés lorsqu’une plage de sélecteur est active. |
 | **API sans plage explicite** | `SINCE`/`UNTIL` dans la requête, par défaut la dernière heure. |
 
-> **Remarque**
+>[!NOTE]
 >
 > Étant donné que le sélecteur gagne dans les tableaux de bord et dans Explorer, ce guide ne prend généralement pas en `SINCE` les requêtes des tableaux de bord. Il convient toujours de définir un sélecteur de l’heure pour les requêtes.

@@ -1,9 +1,9 @@
 ---
 title: 'Tutoriel 2 : Contrôler vos données'
 description: Découvrez comment filtrer, regrouper et contrôler les résultats des requêtes dans Observability Insights.
-source-git-commit: 91a61d33010192cedce7d40a45ffe86f32e4824b
+source-git-commit: 09c8edf64e744ff0c16acd0d5905fc6796490f82
 workflow-type: tm+mt
-source-wordcount: '337'
+source-wordcount: '336'
 ht-degree: 0%
 ---
 
@@ -67,7 +67,7 @@ Les moyennes masquent les valeurs aberrantes. Les centiles montrent ce que la pl
 SELECT percentile(duration, 50) AS p50, percentile(duration, 95) AS p95, percentile(duration, 99) AS p99 FROM Transaction TIMESERIES AUTO
 ```
 
-> **Conseil**
+>[!TIP]
 >
 > p50, p95 et p99 de `Transaction.duration` sont servis à partir de rollups sur de longues fenêtres, de sorte qu&#39;ils restent rapides pour des vues hebdomadaires.
 
