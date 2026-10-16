@@ -1,7 +1,7 @@
 ---
 title: Plans directeurs de tableaux de bord
 description: Créez des tableaux de bord Observability Insights à l’aide de plans directeurs pour la surveillance des applications et des infrastructures.
-source-git-commit: 143a9567da06f0137ef690795cfbc41bda1780ca
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '1324'
 ht-degree: 1%
@@ -644,7 +644,7 @@ SELECT rate(value) AS rxBytesPerSec FROM NetworkReceiveRate FACET host TIMESERIE
 SELECT rate(value) AS txBytesPerSec FROM NetworkTransmitRate FACET host TIMESERIES AUTO
 ```
 
-**W20 · E/S réseau totale pour un hôte (formule)** — Widget de formule, L, `bytes/s`, 12×4. Les formules ne peuvent pas `FACET`, et `rate()` doivent être limitées à un hôte (voir [Entités de mesure traitées](#53-curated-metric-entities)), donc épinglez l’hôte — remplacez `web-publish-01` par un nom d’hôte réel de W5.
+**W20 · E/S réseau totale pour un hôte (formule)** — Widget de formule, L, `bytes/s`, 12×4. Les formules ne peuvent pas `FACET`, et `rate()` doivent être limitées à un hôte (voir [Entités de mesure traitées](../references/data-dictionary.md#curated-metric-entities)), donc épinglez l’hôte — remplacez `web-publish-01` par un nom d’hôte réel de W5.
 
 `netRx` de requête :
 
@@ -939,7 +939,7 @@ Formule :
 limit - used
 ```
 
-**W5 · Taux d’entrée/sortie réseau pour un hôte** — Formule, L (épingler l’hôte ; voir [Entités de mesure traitées](#53-curated-metric-entities))
+**W5 · Taux d’entrée/sortie réseau pour un hôte** — Formule, L (épingler l’hôte ; voir [Entités de mesure traitées](../references/data-dictionary.md#curated-metric-entities))
 
 `rx` de requête :
 

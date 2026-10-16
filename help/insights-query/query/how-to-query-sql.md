@@ -1,7 +1,7 @@
 ---
 title: Requête avec SQL
 description: Découvrez comment écrire et exécuter des requêtes SQL dans Observability Insights.
-source-git-commit: 148bf6480461a0109b221b8e7c2f9ab2035a7d68
+source-git-commit: 873e7b9f279c3276fc0197969d667d40d022968a
 workflow-type: tm+mt
 source-wordcount: '557'
 ht-degree: 0%
@@ -43,7 +43,7 @@ Cela comptabilise les requêtes par service, ce qui vous indique quels services 
 
 > **Important**
 >
-> **Découvrir avant de créer.** La disponibilité des attributs dépend de la manière dont chaque service est instrumenté. Exécutez d’abord les [requêtes de découverte](#101-data-discovery) sur un nouveau client pour voir quels services, hôtes, attributs et mesures contiennent réellement des données.
+> **Découvrir avant de créer.** La disponibilité des attributs dépend de la manière dont chaque service est instrumenté. Exécutez d’abord les [requêtes de découverte](../../examples/query-cookbook.md#data-discovery) sur un nouveau client pour voir quels services, hôtes, attributs et mesures contiennent réellement des données.
 
 ### Exécution d’une requête
 
